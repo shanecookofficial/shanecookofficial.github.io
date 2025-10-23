@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https:/shanecookofficial.github.io/sitemap.xml
