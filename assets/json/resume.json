@@ -65,49 +65,27 @@
     {
       "name": "Programming Languages",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Python",
-        "C#",
-        "TypeScript"
-      ]
+      "keywords": ["Python", "C#", "TypeScript"]
     },
     {
       "name": "Test Automation Frameworks",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Playwright (TypeScript)",
-        "Selenium (Python, C#)",
-        "WinAppDriver (C#)"
-      ]
+      "keywords": ["Playwright (TypeScript)", "Selenium (Python, C#)", "WinAppDriver (C#)"]
     },
     {
       "name": "Database Languages",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "T-SQL",
-        "PL/SQL",
-        "MySQL",
-        "CosmosDB"
-      ]
+      "keywords": ["T-SQL", "PL/SQL", "MySQL", "CosmosDB"]
     },
     {
       "name": "Cloud Platforms",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Azure"
-      ]
+      "keywords": ["Azure"]
     },
     {
       "name": "Tools",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Postman",
-        "Databricks",
-        "SSMS",
-        "Snowflake",
-        "Git",
-        "Jira"
-      ]
+      "keywords": ["Postman", "Databricks", "SSMS", "Snowflake", "Git", "Jira"]
     }
   ]
 }

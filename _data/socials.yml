@@ -51,6 +51,6 @@ mastodon_username: instance.tld/@shanedoesstuff # your mastodon instance+usernam
 # youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 # zotero_username: # your zotero username
 # custom_social: # can be any name here other than the ones already defined above
-  # logo: https://www.citypng.com/public/uploads/preview/threads-app-black-logo-icon-png-735811696672465sppjeyghwv.png?v=2025090709 # can be png, svg, jpg
-  # title: Threads
-  # url: https://www.threads.com/@shane_does_stuff
+# logo: https://www.citypng.com/public/uploads/preview/threads-app-black-logo-icon-png-735811696672465sppjeyghwv.png?v=2025090709 # can be png, svg, jpg
+# title: Threads
+# url: https://www.threads.com/@shane_does_stuff
