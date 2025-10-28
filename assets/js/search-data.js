@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/resume/";
           },
-        },{
+        },{id: "post-pumpkin-patch-2025",
+        
+          title: "Pumpkin Patch 2025",
+        
+        description: "The Cook&#39;s 2025 trip to the Pumpkin Patch",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/pumpkin_patch/";
+          
+        },
+      },{
       id: 'light-theme',
       title: 'Change theme to light',
       description: 'Change the theme of the site to Light',
