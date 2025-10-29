@@ -5,7 +5,7 @@ date: 2025-10-28 18:00:00
 description: The Cook's 2025 trip to the Pumpkin Patch
 tags: halloween pumpkin painting family
 categories:
-thumbnail: assets/img/2025/October/pumpkin_patch_2025-pumpkins_secured.png
+thumbnail: https://i.imgur.com/A2kBTxI.jpeg
 ---
 
 A few weeks ago, my daughter Josie started to sing [Miss Rachel’s Pumpkin Patch song](https://youtu.be/B7AuefmcT6A?si=cOjGQ7m8mjWLa9zV&t=108) which has spurred an interest for us to take the kids to a pumpkin patch this year. We have taken Josie every year that she has been alive and now that she is older she should be able to enjoy it more than she has in the past.
@@ -22,16 +22,16 @@ There were several piles of miniature pumpkins that Josie found intriguing. We o
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/2025/October/pumpkin_patch_2025-trailer.png" class="img-fluid rounded z-depth-1" zoomable=true  alt="Josie posing in a trailer with some pumpkins."%}
+        {% include figure.liquid loading="eager" path="https://imgur.com/Fwj34Hw.jpeg" class="img-fluid rounded z-depth-1" zoomable=true  alt="Josie posing in a trailer with some pumpkins."%}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/2025/October/pumpkin_patch_2025-flowers.png" class="img-fluid rounded z-depth-1" zoomable=true alt="Our family sitting on a swing surrounded by a flower garden."%}
+        {% include figure.liquid loading="eager" path="https://imgur.com/wvvkmS2.jpeg" class="img-fluid rounded z-depth-1" zoomable=true alt="Our family sitting on a swing surrounded by a flower garden."%}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/2025/October/pumpkin_patch_2025-flowers2.png" class="img-fluid rounded z-depth-1" zoomable=true alt="A family selfie in the flowere garden."%}
+        {% include figure.liquid loading="eager" path="https://imgur.com/lqR7I6Q.jpeg" class="img-fluid rounded z-depth-1" zoomable=true alt="A family selfie in the flowere garden."%}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/2025/October/pumpkin_patch_2025-pumpkins_secured.png" class="img-fluid rounded z-depth-1" zoomable=true alt="A family selfie with Josie showing off a white and orange mini pumpkins she secured."%}
+        {% include figure.liquid loading="eager" path="https://i.imgur.com/A2kBTxI.jpeg" class="img-fluid rounded z-depth-1" zoomable=true alt="A family selfie with Josie showing off a white and orange mini pumpkins she secured."%}
     </div>
 </div>
 
@@ -39,16 +39,16 @@ Today Josie and I broke out some old acrylic paints I used for painting Dungeons
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/2025/October/pumpkin_patch_2025-balancing_act.png" class="img-fluid rounded z-depth-1" zoomable=true alt="Josie and I balancing the mini pumpkins on our heads."%}
+        {% include figure.liquid loading="eager" path="https://imgur.com/FyLKLDH.jpeg" class="img-fluid rounded z-depth-1" zoomable=true alt="Josie and I balancing the mini pumpkins on our heads."%}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/2025/October/pumpkin_patch_2025-painting.jpeg" class="img-fluid rounded z-depth-1" zoomable=true alt="Josie and I with the finished painted pumpkins part 1."%}
+        {% include figure.liquid loading="eager" path="https://imgur.com/hVvp3gZ.jpeg" class="img-fluid rounded z-depth-1" zoomable=true alt="Josie and I with the finished painted pumpkins part 1."%}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/2025/October/pumpkin_patch_2025-painting3.jpeg" class="img-fluid rounded z-depth-1" zoomable=true alt="Josie and I with the finished painted pumpkins part 2."%}
+        {% include figure.liquid loading="eager" path="https://imgur.com/hkC5mSV.jpeg" class="img-fluid rounded z-depth-1" zoomable=true alt="Josie and I with the finished painted pumpkins part 2."%}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/2025/October/pumpkin_patch_2025-painting2.jpeg" class="img-fluid rounded z-depth-1" zoomable=true alt="Josie with the finished painted pumpkins."%}
+        {% include figure.liquid loading="eager" path="https://imgur.com/Eyyrlqp.jpeg" class="img-fluid rounded z-depth-1" zoomable=true alt="Josie with the finished painted pumpkins."%}
     </div>
 </div>
 
