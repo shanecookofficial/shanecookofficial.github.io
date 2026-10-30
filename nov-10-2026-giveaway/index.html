@@ -185,6 +185,48 @@ a.ent:hover{color:var(--cyan);border-bottom-style:solid;border-bottom-color:var(
 @media (max-width:860px){.specs{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:440px){.specs{grid-template-columns:1fr}}
 
+/* --- schedule + live status --------------------------------- */
+.sched{
+  margin-top:1px;border:1px solid var(--line);border-top:0;
+  background:var(--bg-2);
+  display:grid;grid-template-columns:260px 1fr;
+}
+.sched-status{
+  padding:18px 20px;border-right:1px solid var(--line);
+  display:flex;flex-direction:column;gap:4px;justify-content:center;
+  background:linear-gradient(180deg,var(--panel),var(--bg-2));
+}
+.sched-status .k{font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.sched-status .v{
+  font-family:var(--font-head);font-weight:800;font-size:30px;line-height:1;text-transform:uppercase;letter-spacing:.03em;color:#fff;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.sched-status .v::before{content:"";width:9px;height:9px;background:var(--muted);box-shadow:0 0 10px currentColor;flex:none}
+.sched-status[data-state="upcoming"] .v{color:var(--hazard)}
+.sched-status[data-state="upcoming"] .v::before{background:var(--hazard);animation:blink 1.4s steps(2) infinite}
+.sched-status[data-state="open"] .v{color:var(--green)}
+.sched-status[data-state="open"] .v::before{background:var(--green);animation:blink 1s steps(2) infinite}
+.sched-status[data-state="closed"] .v{color:var(--red-hot)}
+.sched-status[data-state="closed"] .v::before{background:var(--red-hot)}
+.sched-status .cd{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;color:var(--text-dim);min-height:1.4em;font-variant-numeric:tabular-nums}
+.sched-status .cd b{color:#fff;font-weight:600}
+.sched-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr)}
+.sched-list li{padding:16px 20px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:3px}
+.sched-list li:last-child{border-right:0}
+.sched-list .k{font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.sched-list time{font-size:15px;color:var(--text)}
+.sched-list time b{color:#fff;font-weight:600}
+.sched-list .tz{font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;color:var(--muted)}
+@media (max-width:960px){
+  .sched{grid-template-columns:1fr}
+  .sched-status{border-right:0;border-bottom:1px solid var(--line)}
+}
+@media (max-width:720px){
+  .sched-list{grid-template-columns:1fr}
+  .sched-list li{border-right:0;border-bottom:1px solid var(--line)}
+  .sched-list li:last-child{border-bottom:0}
+}
+
 /* --- CTA ---------------------------------------------------- */
 .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;align-items:center}
 .btn{
@@ -197,6 +239,7 @@ a.ent:hover{color:var(--cyan);border-bottom-style:solid;border-bottom-color:var(
 }
 .btn:hover{background:var(--red-hot);color:#fff;transform:translateY(-1px)}
 .btn .chev{font-family:var(--font-mono);font-size:14px;letter-spacing:-.1em;opacity:.9}
+.btn[hidden]{display:none}
 .btn.ghost{background:var(--panel-2);color:var(--text);box-shadow:inset 0 0 0 1px var(--line-2)}
 .btn.ghost:hover{background:#1b1e24;color:#fff}
 
@@ -486,7 +529,7 @@ html.glitching .title{animation:pgRgb .55s steps(1) both}
 
     <div class="hero-meta">
       <span class="tag hz">Open worldwide · 18+</span>
-      <span class="tag">7‑day entry window</span>
+      <span class="tag">Nov 10 – 17, 2026 · MST</span>
       <span class="tag cyan">1 winner · random draw</span>
     </div>
 
@@ -515,19 +558,48 @@ html.glitching .title{animation:pgRgb .55s steps(1) both}
       </div>
       <div class="spec cy">
         <div class="k">Entry window</div>
-        <div class="v">7 Days</div>
-        <div class="d">Closes 11:59 PM PT on the 7th day after publication</div>
+        <div class="v">Nov 10 – 17</div>
+        <div class="d">Opens 10:00 AM MST Nov 10 · closes 9:59 AM MST Nov 17, 2026</div>
       </div>
       <div class="spec">
         <div class="k">Winner</div>
-        <div class="v">Random Draw</div>
-        <div class="d">Within 7 days of close · notified via comment reply</div>
+        <div class="v">Nov 19</div>
+        <div class="d">Random draw · announced in a video on the 5H4N3 channel</div>
       </div>
     </div>
 
+    <!-- Schedule + live status. Times are fixed in MST (UTC-7); the countdown is computed client-side. -->
+    <div class="sched" aria-label="Schedule">
+      <div class="sched-status">
+        <span class="k">Status</span>
+        <span class="v" id="gv-status">—</span>
+        <span class="cd" id="gv-countdown" aria-live="polite"></span>
+      </div>
+      <ol class="sched-list">
+        <li>
+          <span class="k">Opens</span>
+          <time datetime="2026-11-10T17:00:00Z"><b>Tue, Nov 10, 2026</b> · 10:00 AM MST</time>
+          <span class="tz">9:00 AM PT · 12:00 PM ET · 17:00 UTC</span>
+        </li>
+        <li>
+          <span class="k">Closes</span>
+          <time datetime="2026-11-17T16:59:00Z"><b>Tue, Nov 17, 2026</b> · 9:59 AM MST</time>
+          <span class="tz">8:59 AM PT · 11:59 AM ET · 16:59 UTC</span>
+        </li>
+        <li>
+          <span class="k">Winner</span>
+          <time datetime="2026-11-19"><b>Thu, Nov 19, 2026</b> · announcement video</time>
+          <span class="tz">Posted on the 5H4N3 YouTube channel</span>
+        </li>
+      </ol>
+    </div>
+
     <div class="cta-row">
-      <!-- TODO: replace href with the giveaway video URL once published -->
-      <a class="btn" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">Enter on YouTube <span class="chev">&gt;&gt;&gt;</span></a>
+      <!-- TODO (Nov 10): set GIVEAWAY_VIDEO_URL in the script block at the bottom once the video is live.
+           Until then this falls back to the channel. -->
+      <a class="btn" id="cta-enter" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">Enter on YouTube <span class="chev">&gt;&gt;&gt;</span></a>
+      <!-- TODO (Nov 19): set WINNER_VIDEO_URL in the script block; this button appears automatically once set. -->
+      <a class="btn ghost" id="cta-winner" href="#" target="_blank" rel="noopener" hidden>Winner announcement <span class="chev">&gt;&gt;&gt;</span></a>
       <a class="btn ghost" href="#rules">Read the rules <span class="chev">&gt;&gt;&gt;</span></a>
     </div>
   </section>
@@ -596,8 +668,9 @@ html.glitching .title{animation:pgRgb .55s steps(1) both}
           <span class="fill"></span>
           <span class="code">// timing</span>
         </header>
-        <p>The Promotion begins when the designated giveaway video is published on the <a class="ent" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">5H4N3</a> YouTube channel.</p>
-        <p>The Promotion will remain open for seven (7) calendar days and will close at <strong>11:59 PM Pacific Time</strong> on the seventh calendar day following publication.</p>
+        <p>The Promotion begins at <strong>10:00 AM Mountain Standard Time (MST) on Tuesday, November 10, 2026</strong>, upon publication of the designated giveaway video on the <a class="ent" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">5H4N3</a> YouTube channel.</p>
+        <p>The Promotion will remain open for seven (7) calendar days and will close at <strong>9:59 AM Mountain Standard Time (MST) on Tuesday, November 17, 2026</strong> (the "Promotion Period").</p>
+        <p>For reference, the Promotion Period runs from 17:00 UTC on November 10, 2026 to 16:59 UTC on November 17, 2026. The Host's clock is the official timekeeping device for this Promotion.</p>
         <p>Entries submitted after the closing deadline will not be eligible.</p>
       </section>
 
@@ -659,7 +732,7 @@ html.glitching .title{animation:pgRgb .55s steps(1) both}
           <span class="code">// the draw</span>
         </header>
         <p>One (1) potential winner will be selected through a random drawing from all eligible entries received during the Promotion Period.</p>
-        <p>The drawing will take place within seven (7) calendar days following the closing of the Promotion.</p>
+        <p>The drawing will take place within seven (7) calendar days following the closing of the Promotion. The winner is expected to be announced in a video published on the <a class="ent" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">5H4N3</a> YouTube channel on or about <strong>Thursday, November 19, 2026</strong>.</p>
         <p>The potential winner will be contacted through a reply to their original YouTube comment and/or another mutually agreed‑upon communication method.</p>
         <p>The potential winner must respond within seven (7) calendar days of the initial notification to claim the prize and provide the information reasonably necessary to verify eligibility and arrange delivery.</p>
         <p>If the potential winner does not respond within the specified period, is found to be ineligible, or declines the prize, the Sponsor and Host reserve the right to select an alternate winner through another random drawing.</p>
@@ -749,7 +822,7 @@ html.glitching .title{animation:pgRgb .55s steps(1) both}
   <div class="wrap">
     <div class="fine">
       <b>NO PURCHASE NECESSARY.</b> Open worldwide to individuals 18+ where permitted by law. Void where prohibited.
-      Ends 11:59 PM PT on the seventh calendar day after the giveaway video is published. One (1) winner; ARV $25 USD.
+      Begins 10:00 AM MST Nov 10, 2026; ends 9:59 AM MST Nov 17, 2026. One (1) winner; ARV $25 USD.
       Not sponsored, endorsed, or administered by YouTube or Neuroscape. Neuroscape™ is a trademark of Neuroscape, LLC.
     </div>
     <div class="stamp" aria-hidden="true">End of file</div>
@@ -757,6 +830,55 @@ html.glitching .title{animation:pgRgb .55s steps(1) both}
 </footer>
 
 <script>
+/* ============================================================
+   CONFIG — fill these in as the links become available.
+   ============================================================ */
+var GIVEAWAY_VIDEO_URL = "";   // Nov 10: the giveaway video (entry happens in its comments)
+var WINNER_VIDEO_URL   = "";   // Nov 19: the winner announcement video
+var OPENS_AT  = Date.parse("2026-11-10T17:00:00Z"); // 10:00 AM MST
+var CLOSES_AT = Date.parse("2026-11-17T17:00:00Z"); // entries accepted through 9:59 AM MST
+
+/* Wire the CTA buttons to whatever links exist. */
+(function(){
+  var enter = document.getElementById('cta-enter'), win = document.getElementById('cta-winner');
+  if (enter && GIVEAWAY_VIDEO_URL) enter.href = GIVEAWAY_VIDEO_URL;
+  if (win && WINNER_VIDEO_URL) { win.href = WINNER_VIDEO_URL; win.hidden = false; }
+})();
+
+/* Live status + countdown (client clock; the rules text is authoritative). */
+(function(){
+  var box = document.querySelector('.sched-status');
+  var st = document.getElementById('gv-status'), cd = document.getElementById('gv-countdown');
+  if (!box || !st || !cd) return;
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function fmt(ms){
+    var s = Math.max(0, Math.floor(ms / 1000));
+    var d = Math.floor(s / 86400); s -= d * 86400;
+    var h = Math.floor(s / 3600);  s -= h * 3600;
+    var m = Math.floor(s / 60);    s -= m * 60;
+    return (d ? '<b>' + d + '</b>d ' : '') + '<b>' + pad(h) + '</b>h <b>' + pad(m) + '</b>m <b>' + pad(s) + '</b>s';
+  }
+  function tick(){
+    var now = Date.now();
+    if (now < OPENS_AT) {
+      box.setAttribute('data-state', 'upcoming');
+      st.textContent = 'Opens soon';
+      cd.innerHTML = 'T-minus ' + fmt(OPENS_AT - now);
+    } else if (now < CLOSES_AT) {
+      box.setAttribute('data-state', 'open');
+      st.textContent = 'Entries open';
+      cd.innerHTML = 'Closes in ' + fmt(CLOSES_AT - now);
+    } else {
+      box.setAttribute('data-state', 'closed');
+      st.textContent = 'Entries closed';
+      cd.innerHTML = WINNER_VIDEO_URL ? 'Winner announced // see video' : 'Winner announced Nov 19';
+      return; // stop ticking
+    }
+    setTimeout(tick, 1000 - (Date.now() % 1000));
+  }
+  tick();
+})();
+
 /* Boot sequence: terminal log -> progress -> tear-away reveal. One-shot. */
 (function(){
   var root = document.documentElement;
