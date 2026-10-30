@@ -186,13 +186,13 @@ a.ent:hover{color:var(--cyan);border-bottom-style:solid;border-bottom-color:var(
 @media (max-width:440px){.specs{grid-template-columns:1fr}}
 
 /* --- schedule + live status --------------------------------- */
+/* Same 4-column grid as .specs above so the vertical dividers line up. */
 .sched{
-  margin-top:1px;border:1px solid var(--line);border-top:0;
-  background:var(--bg-2);
-  display:grid;grid-template-columns:260px 1fr;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);border-top:0;
 }
 .sched-status{
-  padding:18px 20px;border-right:1px solid var(--line);
+  padding:18px 20px;
   display:flex;flex-direction:column;gap:4px;justify-content:center;
   background:linear-gradient(180deg,var(--panel),var(--bg-2));
 }
@@ -210,21 +210,17 @@ a.ent:hover{color:var(--cyan);border-bottom-style:solid;border-bottom-color:var(
 .sched-status[data-state="closed"] .v::before{background:var(--red-hot)}
 .sched-status .cd{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;color:var(--text-dim);min-height:1.4em;font-variant-numeric:tabular-nums}
 .sched-status .cd b{color:#fff;font-weight:600}
-.sched-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr)}
-.sched-list li{padding:16px 20px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:3px}
-.sched-list li:last-child{border-right:0}
+.sched-list{list-style:none;margin:0;padding:0;display:contents}
+.sched-list li{padding:16px 20px;background:var(--bg-2);display:flex;flex-direction:column;gap:3px;justify-content:center}
 .sched-list .k{font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 .sched-list time{font-size:15px;color:var(--text)}
 .sched-list time b{color:#fff;font-weight:600}
 .sched-list .tz{font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;color:var(--muted)}
-@media (max-width:960px){
-  .sched{grid-template-columns:1fr}
-  .sched-status{border-right:0;border-bottom:1px solid var(--line)}
-}
-@media (max-width:720px){
-  .sched-list{grid-template-columns:1fr}
-  .sched-list li{border-right:0;border-bottom:1px solid var(--line)}
-  .sched-list li:last-child{border-bottom:0}
+@media (max-width:860px){
+  /* .specs drops to 2 columns here; status spans the full row, dates stack below it */
+  .sched{grid-template-columns:repeat(2,1fr)}
+  .sched-status{grid-column:1 / -1}
+  .sched-list li{grid-column:1 / -1}
 }
 
 /* --- CTA ---------------------------------------------------- */
