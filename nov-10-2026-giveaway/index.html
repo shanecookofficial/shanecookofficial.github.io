@@ -6,6 +6,35 @@
 <title>Neuroscape Metal Card Giveaway — Official Rules | 5H4N3</title>
 <meta name="description" content="Official Rules for the Neuroscape Metal Card Giveaway hosted by 5H4N3 and sponsored by Mystic Hoard. No purchase necessary.">
 <meta name="theme-color" content="#080809">
+<!-- Favicon: B.O.B. normally, Jingle B.O.B. during the holiday window (visitor's local date).
+     Icon sets live at /assets/bob/ and /assets/jingle-bob/ in the site root. -->
+<script>
+(function(){
+  var HOLIDAY_START = [12, 1]; // [month, day] inclusive — first day Jingle B.O.B. shows
+  var HOLIDAY_END   = [1, 1];  // [month, day] inclusive — last day (window may wrap past New Year)
+  var now = new Date(), md = (now.getMonth() + 1) * 100 + now.getDate();
+  var s = HOLIDAY_START[0] * 100 + HOLIDAY_START[1], e = HOLIDAY_END[0] * 100 + HOLIDAY_END[1];
+  var holiday = s <= e ? (md >= s && md <= e) : (md >= s || md <= e);
+  var base = '/assets/' + (holiday ? 'jingle-bob' : 'bob') + '/';
+  [
+    ['icon', 'favicon.ico', { sizes: '48x48' }],
+    ['icon', 'favicon.svg', { type: 'image/svg+xml' }],
+    ['icon', 'favicon-32.png', { type: 'image/png', sizes: '32x32' }],
+    ['icon', 'favicon-192.png', { type: 'image/png', sizes: '192x192' }],
+    ['apple-touch-icon', 'apple-touch-icon.png', {}]
+  ].forEach(function (l) {
+    var el = document.createElement('link');
+    el.rel = l[0]; el.href = base + l[1];
+    for (var k in l[2]) el.setAttribute(k, l[2][k]);
+    document.head.appendChild(el);
+  });
+})();
+</script>
+<noscript>
+  <link rel="icon" href="/assets/bob/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/assets/bob/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/bob/apple-touch-icon.png">
+</noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -558,9 +587,9 @@ html.glitching .title{animation:pgRgb .55s steps(1) both}
         <div class="d">Opens 10:00 AM MST Nov 10 · closes 9:59 AM MST Nov 17, 2026</div>
       </div>
       <div class="spec">
-        <div class="k">Winner</div>
-        <div class="v">Nov 19</div>
-        <div class="d">Random draw · announced in a video on the 5H4N3 channel</div>
+        <div class="k">Selection</div>
+        <div class="v">Random Draw</div>
+        <div class="d">1 winner · notified via reply to their comment</div>
       </div>
     </div>
 
@@ -583,7 +612,7 @@ html.glitching .title{animation:pgRgb .55s steps(1) both}
           <span class="tz">8:59 AM PT · 11:59 AM ET · 16:59 UTC</span>
         </li>
         <li>
-          <span class="k">Winner</span>
+          <span class="k">Winner announced</span>
           <time datetime="2026-11-19"><b>Thu, Nov 19, 2026</b> · announcement video</time>
           <span class="tz">Posted on the 5H4N3 YouTube channel</span>
         </li>
