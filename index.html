@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neuroscape Metal Card Giveaway — Official Rules | 5H4N3</title>
+<meta name="description" content="Official Rules for the Neuroscape Metal Card Giveaway hosted by 5H4N3 and sponsored by Mystic Hoard. No purchase necessary.">
+<meta name="theme-color" content="#080809">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   NEUROSCAPE METAL CARD GIVEAWAY — OFFICIAL RULES
+   Theme: gritty industrial cyberpunk. Gunmetal, oxblood, hazard
+   yellow, cold cyan. Grain, scanlines, cut corners, stencil type.
+   ============================================================ */
+:root{
+  --bg:#080809;
+  --bg-2:#0c0d0f;
+  --panel:#101114;
+  --panel-2:#15171b;
+  --line:#25282e;
+  --line-2:#33373f;
+  --text:#d8d5ce;
+  --text-dim:#a4a39d;
+  --muted:#6e7177;
+  --red:#c8102e;
+  --red-hot:#ff2a4a;
+  --red-deep:#5a0a16;
+  --hazard:#e3b505;
+  --hazard-dim:#9a7c07;
+  --cyan:#3cc7d3;
+  --cyan-dim:#1d6b73;
+  --green:#7bd36b;
+  --cut:14px;
+  --font-head:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  --font-body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --font-mono:"IBM Plex Mono","SFMono-Regular",Menlo,Consolas,monospace;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  position:relative;
+  overflow-x:hidden;
+}
+
+/* --- atmosphere: grain + scanlines + faint grid ------------- */
+body::before{
+  content:"";position:fixed;inset:-50%;z-index:0;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  opacity:.07;mix-blend-mode:overlay;
+  animation:grain 1.2s steps(6) infinite;
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px) 0 0/72px 72px,
+    linear-gradient(0deg,rgba(255,255,255,.025) 1px,transparent 1px) 0 0/72px 72px,
+    radial-gradient(1200px 600px at 20% -10%,rgba(200,16,46,.14),transparent 60%),
+    radial-gradient(900px 500px at 100% 20%,rgba(60,199,211,.06),transparent 60%);
+}
+@keyframes grain{
+  0%{transform:translate(0,0)}20%{transform:translate(-2%,3%)}40%{transform:translate(3%,-1%)}
+  60%{transform:translate(-1%,-2%)}80%{transform:translate(2%,2%)}100%{transform:translate(0,0)}
+}
+@media (prefers-reduced-motion:reduce){body::before{animation:none}}
+
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* --- utility ------------------------------------------------ */
+.mono{font-family:var(--font-mono)}
+.cut{clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
+.hazard{
+  height:6px;
+  background:repeating-linear-gradient(135deg,var(--hazard) 0 14px,#0a0a0a 14px 28px);
+  opacity:.85;
+}
+.hazard.thin{height:3px;opacity:.6}
+.tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--text-dim);
+}
+.tag::before{content:"";width:6px;height:6px;background:var(--red);box-shadow:0 0 8px var(--red)}
+.tag.cyan::before{background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+.tag.hz::before{background:var(--hazard);box-shadow:0 0 8px var(--hazard)}
+
+a{color:var(--cyan);text-decoration:none;border-bottom:1px solid var(--cyan-dim)}
+a:hover{color:#8fe7ee;border-bottom-color:var(--cyan)}
+/* entity links (Sponsor / Host): inherit surrounding color, reveal on hover */
+a.ent{color:inherit;border-bottom:1px dotted var(--line-2);transition:color .15s,border-color .15s}
+a.ent:hover{color:var(--cyan);border-bottom-style:solid;border-bottom-color:var(--cyan)}
+.sec strong a.ent,.subtitle strong a.ent{color:#fff}
+.sec strong a.ent:hover,.subtitle strong a.ent:hover{color:var(--cyan)}
+
+/* --- topbar ------------------------------------------------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(8,8,9,.86);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{display:flex;align-items:center;gap:14px;border:0}
+.brand .mark{
+  font-family:var(--font-head);font-weight:800;font-size:22px;letter-spacing:.06em;
+  color:#fff;line-height:1;
+}
+.brand .sep{color:var(--line-2);font-family:var(--font-mono)}
+.brand .sub{font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+.status{display:flex;gap:18px;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.status b{color:var(--text-dim);font-weight:500}
+.status .ok{color:var(--green)}
+.status .blink{animation:blink 1.6s steps(2) infinite}
+@keyframes blink{50%{opacity:.25}}
+@media (max-width:760px){.status .hide-m{display:none}}
+
+/* --- hero --------------------------------------------------- */
+.hero{padding:64px 0 36px;position:relative}
+.hero .kicker{display:flex;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.hero .kicker .line{flex:1;height:1px;background:linear-gradient(90deg,var(--line-2),transparent);min-width:40px}
+.title{
+  font-family:var(--font-head);font-weight:800;text-transform:uppercase;
+  font-size:clamp(44px,8vw,104px);line-height:.9;letter-spacing:.01em;margin:0;
+  color:#f2f0ea;position:relative;
+}
+.title .accent{color:var(--red);display:block}
+
+.subtitle{
+  margin:22px 0 0;max-width:720px;
+  font-size:18px;color:var(--text-dim);
+}
+.subtitle strong{color:var(--text);font-weight:600}
+.hero-meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:22px}
+
+/* --- warning banner ----------------------------------------- */
+.warning{
+  margin-top:36px;position:relative;
+  background:linear-gradient(180deg,#121214,#0d0d0f);
+  border:1px solid var(--hazard-dim);
+  padding:0;
+}
+.warning .inner{display:flex;align-items:stretch;gap:0}
+.warning .icon{
+  flex:0 0 72px;display:grid;place-items:center;
+  background:repeating-linear-gradient(135deg,var(--hazard) 0 10px,#111 10px 20px);
+  border-right:1px solid var(--hazard-dim);
+}
+.warning .icon svg{display:block;filter:drop-shadow(0 0 6px rgba(0,0,0,.8))}
+.warning .body{padding:18px 22px}
+.warning .body p{margin:0;font-family:var(--font-head);text-transform:uppercase;font-weight:700;font-size:clamp(16px,2.2vw,22px);letter-spacing:.04em;color:#f5f0d8;line-height:1.25}
+.warning .body small{display:block;margin-top:6px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--hazard)}
+@media (max-width:560px){.warning .icon{flex-basis:52px}.warning .icon svg{width:30px;height:28px}}
+
+/* --- spec grid --------------------------------------------- */
+.specs{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);margin-top:28px;
+}
+.spec{
+  background:var(--panel);padding:18px 20px;position:relative;overflow:hidden;
+}
+.spec::after{
+  content:"";position:absolute;right:-20px;top:-20px;width:60px;height:60px;
+  background:linear-gradient(135deg,transparent 50%,rgba(255,255,255,.03) 50%);
+}
+.spec .k{font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.spec .v{font-family:var(--font-head);font-weight:700;font-size:24px;line-height:1.1;margin-top:6px;color:#fff;text-transform:uppercase}
+.spec .d{font-size:13px;color:var(--text-dim);margin-top:4px}
+.spec.red .v{color:var(--red-hot)}
+.spec.hz .v{color:var(--hazard)}
+.spec.cy .v{color:var(--cyan)}
+@media (max-width:860px){.specs{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:440px){.specs{grid-template-columns:1fr}}
+
+/* --- CTA ---------------------------------------------------- */
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--font-head);font-weight:700;font-size:18px;letter-spacing:.08em;text-transform:uppercase;
+  padding:14px 22px;border:0;cursor:pointer;color:#fff;
+  background:var(--red);
+  clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);
+  transition:background .15s,transform .15s;
+}
+.btn:hover{background:var(--red-hot);color:#fff;transform:translateY(-1px)}
+.btn .chev{font-family:var(--font-mono);font-size:14px;letter-spacing:-.1em;opacity:.9}
+.btn.ghost{background:var(--panel-2);color:var(--text);box-shadow:inset 0 0 0 1px var(--line-2)}
+.btn.ghost:hover{background:#1b1e24;color:#fff}
+
+/* --- layout: toc + content ---------------------------------- */
+.layout{display:grid;grid-template-columns:260px 1fr;gap:40px;padding:48px 0 80px;align-items:start}
+@media (max-width:960px){.layout{grid-template-columns:1fr;gap:28px}}
+
+.toc{
+  position:sticky;top:84px;
+  background:var(--panel);border:1px solid var(--line);
+  padding:0;
+}
+.toc .head{
+  padding:12px 16px;border-bottom:1px solid var(--line);
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.toc .head b{color:var(--text-dim);font-weight:500}
+.toc ol{list-style:none;margin:0;padding:8px 0}
+.toc li a{
+  display:flex;gap:12px;align-items:baseline;padding:8px 16px;border:0;
+  color:var(--text-dim);font-size:14px;line-height:1.3;
+  border-left:2px solid transparent;transition:all .15s;
+}
+.toc li a .n{font-family:var(--font-mono);font-size:11px;color:var(--muted);min-width:22px}
+.toc li a:hover{color:#fff;background:rgba(255,255,255,.02)}
+.toc li a.active{color:#fff;border-left-color:var(--red);background:linear-gradient(90deg,rgba(200,16,46,.12),transparent)}
+.toc li a.active .n{color:var(--red-hot)}
+@media (max-width:960px){.toc{position:static}.toc ol{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}}
+
+/* --- sections ---------------------------------------------- */
+.rules{min-width:0}
+.rules .intro{
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;color:var(--muted);
+  border:1px dashed var(--line-2);padding:12px 16px;margin:0 0 28px;
+  display:flex;flex-wrap:wrap;gap:8px 24px;
+}
+.rules .intro span b{color:var(--text-dim);font-weight:500}
+
+.sec{
+  position:relative;
+  background:linear-gradient(180deg,var(--panel),var(--bg-2));
+  border:1px solid var(--line);
+  margin:0 0 22px;
+  padding:26px 30px 28px 30px;
+  scroll-margin-top:84px;
+}
+.sec::before{
+  /* corner notch, like the card frames */
+  content:"";position:absolute;left:-1px;top:-1px;width:18px;height:18px;
+  background:var(--bg);
+  clip-path:polygon(0 0,100% 0,0 100%);
+}
+.sec::after{
+  content:"";position:absolute;left:0;top:0;width:3px;height:100%;
+  background:linear-gradient(180deg,var(--red) 0,var(--red) 40%,transparent 100%);
+  opacity:.9;
+}
+.sec header{display:flex;align-items:baseline;gap:16px;margin:0 0 14px;flex-wrap:wrap}
+.sec .num{
+  font-family:var(--font-mono);font-weight:600;font-size:12px;letter-spacing:.2em;color:var(--red-hot);
+  padding:4px 8px;border:1px solid rgba(200,16,46,.45);background:rgba(200,16,46,.08);
+}
+.sec h2{
+  margin:0;font-family:var(--font-head);font-weight:700;text-transform:uppercase;
+  font-size:clamp(24px,3.2vw,34px);letter-spacing:.03em;line-height:1;color:#f4f2ec;
+}
+.sec header .fill{flex:1;height:1px;background:var(--line);min-width:30px;align-self:center}
+.sec header .code{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+
+.sec p{margin:0 0 14px}
+.sec p:last-child{margin-bottom:0}
+.sec strong{color:#fff;font-weight:600}
+.sec ol,.sec ul{margin:0 0 14px;padding-left:0;list-style:none}
+.sec ol li,.sec ul li{position:relative;padding-left:40px;margin-bottom:10px}
+.sec ol{counter-reset:step}
+.sec ol li::before{
+  counter-increment:step;content:"0" counter(step);
+  position:absolute;left:0;top:2px;
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;color:var(--hazard);
+  border-bottom:1px solid var(--hazard-dim);padding-bottom:1px;
+}
+.sec ul li::before{
+  content:">>";position:absolute;left:8px;top:1px;
+  font-family:var(--font-mono);font-size:13px;letter-spacing:-.15em;color:var(--cyan);
+}
+
+.callout{
+  margin:18px 0;padding:16px 18px;
+  background:#0b0b0d;border:1px solid var(--line-2);
+  position:relative;
+}
+.callout.q{
+  border-color:var(--hazard-dim);
+  background:linear-gradient(90deg,rgba(227,181,5,.07),transparent 60%),#0b0b0d;
+}
+.callout .lbl{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--hazard);margin-bottom:6px}
+.callout .big{font-family:var(--font-head);font-weight:700;font-size:clamp(20px,2.6vw,28px);line-height:1.15;color:#fff;text-transform:uppercase;letter-spacing:.02em}
+.callout.prize{
+  display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;
+  border-color:rgba(200,16,46,.5);
+  background:linear-gradient(90deg,rgba(200,16,46,.1),transparent 60%),#0b0b0d;
+}
+.callout.prize .chip{
+  width:64px;height:88px;
+  background:linear-gradient(160deg,#4a4e57,#1a1c21 55%,#3a3e46);
+  border:1px solid #6a6f79;box-shadow:inset 0 0 0 3px #0c0d10,0 0 20px rgba(0,0,0,.6);
+  clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
+  position:relative;
+}
+.callout.prize .chip::after{
+  content:"";position:absolute;inset:10px 8px auto 8px;height:40px;
+  background:repeating-linear-gradient(0deg,rgba(255,255,255,.08) 0 1px,transparent 1px 4px);
+}
+.callout.prize .lbl{color:var(--red-hot)}
+.callout.prize .arv{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--text-dim);margin-top:6px;text-transform:uppercase}
+.callout.prize .arv b{color:#fff;font-weight:600}
+@media (max-width:520px){.callout.prize{grid-template-columns:1fr}.callout.prize .chip{display:none}}
+
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:8px 20px;margin:14px 0 0}
+.kv dt{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.kv dd{margin:0}
+@media (max-width:520px){.kv{grid-template-columns:1fr;gap:2px}.kv dd{margin-bottom:10px}}
+
+/* --- footer ------------------------------------------------- */
+footer{border-top:1px solid var(--line);background:#060607;position:relative;z-index:1}
+footer .wrap{padding:28px 24px 40px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer .fine{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--muted);line-height:1.8;max-width:760px}
+footer .fine b{color:var(--text-dim);font-weight:500}
+footer .stamp{
+  font-family:var(--font-head);font-weight:800;text-transform:uppercase;font-size:28px;letter-spacing:.08em;
+  color:transparent;-webkit-text-stroke:1px var(--line-2);line-height:1;
+}
+
+/* --- boot sequence (one-shot on load) ----------------------- */
+html.booting{overflow:hidden}
+#boot{
+  display:none;
+  position:fixed;inset:0;z-index:100;
+  font-family:var(--font-mono);color:var(--text-dim);
+  cursor:pointer;
+}
+html.booting #boot,#boot.out{display:block}
+#boot .strip{position:absolute;inset:0;background:#050506;will-change:transform}
+#boot .strip::after{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 3px);
+}
+#boot .ui{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+  max-width:680px;margin:0 auto;padding:0 24px;
+}
+#boot .ghost{
+  position:absolute;right:-2vw;bottom:-2vh;pointer-events:none;
+  font-family:var(--font-head);font-weight:800;font-size:clamp(120px,24vw,320px);line-height:1;
+  color:transparent;-webkit-text-stroke:1px #1c1e23;letter-spacing:.04em;user-select:none;
+}
+#boot .hdr{
+  display:flex;justify-content:space-between;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:16px;
+}
+#boot .hdr b{color:var(--red-hot);font-weight:500}
+#boot .log{font-size:13px;line-height:1.75;min-height:12.25em;white-space:pre-wrap}
+#boot .log .ln{opacity:0;transform:translateX(-6px);animation:lnIn .12s steps(2) forwards}
+#boot .log .k{color:var(--muted)}
+#boot .log .ok{color:var(--green)}
+#boot .log .warn{color:var(--hazard)}
+#boot .log .err{color:var(--red-hot)}
+#boot .log .cy{color:var(--cyan)}
+#boot .log .cur{display:inline-block;width:.6em;height:1em;vertical-align:-2px;background:var(--text-dim);animation:blink .7s steps(2) infinite}
+@keyframes lnIn{to{opacity:1;transform:none}}
+#boot .bar{margin-top:18px;height:4px;background:#121316;border:1px solid var(--line);position:relative;overflow:hidden}
+#boot .bar i{
+  position:absolute;left:0;top:0;bottom:0;width:0;
+  background:linear-gradient(90deg,var(--red-deep),var(--red) 60%,var(--red-hot));
+  box-shadow:0 0 12px rgba(200,16,46,.6);
+  transition:width .18s steps(4);
+}
+#boot .pct{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.2em;color:var(--muted);margin-top:8px;text-transform:uppercase}
+#boot .skip{position:absolute;right:24px;bottom:20px;font-size:10px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+
+/* tear-away exit */
+#boot.out .ui,#boot.out .ghost,#boot.out .skip{opacity:0;transition:opacity .08s}
+#boot.out .strip{animation:tear .42s cubic-bezier(.7,0,.2,1) forwards}
+#boot.out .strip:nth-child(even){animation-name:tearR}
+@keyframes tear{to{transform:translateX(-102%)}}
+@keyframes tearR{to{transform:translateX(102%)}}
+
+/* page glitch-in while the overlay tears */
+html.glitching main,html.glitching .topbar,html.glitching footer{animation:pgJit .55s steps(1) both}
+html.glitching .title{animation:pgRgb .55s steps(1) both}
+@keyframes pgJit{
+  0%{transform:translate(-6px,0);clip-path:inset(0 0 62% 0)}
+  12%{transform:translate(5px,0);clip-path:inset(30% 0 18% 0)}
+  24%{transform:translate(-3px,0);clip-path:inset(0 0 0 0)}
+  36%{transform:translate(2px,0);clip-path:inset(55% 0 0 0)}
+  48%{transform:translate(0,0);clip-path:inset(0 0 0 0)}
+  60%{transform:translate(-2px,0);clip-path:inset(12% 0 70% 0)}
+  70%{transform:none;clip-path:none}
+  100%{transform:none;clip-path:none}
+}
+@keyframes pgRgb{
+  0%{text-shadow:-4px 0 var(--cyan),4px 0 var(--red-hot)}
+  25%{text-shadow:3px 0 var(--cyan),-3px 0 var(--red-hot)}
+  50%{text-shadow:-2px 0 var(--cyan),2px 0 var(--red-hot)}
+  75%{text-shadow:1px 0 var(--cyan),-1px 0 var(--red-hot)}
+  100%{text-shadow:none}
+}
+
+/* --- print -------------------------------------------------- */
+@media print{
+  body{background:#fff;color:#111;font-size:12pt}
+  body::before,body::after,.topbar,.toc,.cta-row,.hazard{display:none!important}
+  .wrap{max-width:none;padding:0}
+  .title,.sec h2,.spec .v,.callout .big{color:#000}
+  .title .accent{color:#8a0b1f}
+  .sec,.warning,.specs,.spec,.callout{background:#fff;border-color:#bbb;box-shadow:none}
+  .sec::after,.sec::before{display:none}
+  .sec p,.sec li{color:#111}
+  .sec strong{color:#000}
+  a{color:#000;border-bottom:1px solid #999}
+  .layout{display:block;padding:0}
+  .sec{break-inside:avoid;page-break-inside:avoid}
+  footer{background:#fff;color:#333}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ BOOT SEQUENCE (JS-driven, one-shot on load) ============ -->
+<script>
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) document.documentElement.className += ' booting';
+  })();
+</script>
+<div id="boot" aria-hidden="true">
+  <div class="strip"></div><div class="strip"></div><div class="strip"></div><div class="strip"></div>
+  <div class="strip"></div><div class="strip"></div><div class="strip"></div><div class="strip"></div>
+  <div class="ghost">5H4N3</div>
+  <div class="ui">
+    <div class="hdr"><span>5H4N3 // uplink</span><span>file <b>NS-GVW-001</b></span></div>
+    <div class="log"></div>
+    <div class="bar"><i></i></div>
+    <div class="pct"><span>decrypting promotion file</span><span class="n">0%</span></div>
+  </div>
+  <div class="skip">click or press any key to skip</div>
+</div>
+
+<!-- ============ TOPBAR ============ -->
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="5H4N3 — Neuroscape Metal Card Giveaway">
+      <span class="mark">5H4N3</span>
+      <span class="sep">///</span>
+      <span class="sub">Neuroscape Giveaway</span>
+    </a>
+    <div class="status" aria-hidden="true">
+      <span class="hide-m">DOC <b>NS-GVW-001</b></span>
+      <span class="hide-m">REV <b>1.0</b></span>
+      <span>ACCESS <b class="ok">PUBLIC</b></span>
+      <span><b class="blink">█</b></span>
+    </div>
+  </div>
+</div>
+
+<main id="top" class="wrap">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="kicker">
+      <span class="tag">Official Rules</span>
+      <span class="line"></span>
+      <span class="tag cyan">Promotion File</span>
+    </div>
+
+    <h1 class="title">
+      Neuroscape<br>
+      <span class="accent">Metal Card</span>
+      Giveaway
+    </h1>
+
+    <p class="subtitle">
+      One laser‑engraved metal Neuroscape trading card. Sponsored by <strong><a class="ent" href="https://mystic-hoard.com/" target="_blank" rel="noopener">Mystic Hoard</a></strong>.
+      Hosted by <strong><a class="ent" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">5H4N3</a></strong>. Drop a comment on the giveaway video and you're in.
+    </p>
+
+    <div class="hero-meta">
+      <span class="tag hz">Open worldwide · 18+</span>
+      <span class="tag">7‑day entry window</span>
+      <span class="tag cyan">1 winner · random draw</span>
+    </div>
+
+    <div class="warning" role="note" aria-label="No purchase necessary">
+      <div class="inner">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 48 44" width="40" height="37"><path d="M24 2 46 42H2Z" fill="#0a0a0a"/><path d="M24 8 40.5 38H7.5Z" fill="#e3b505"/><rect x="22" y="17" width="4" height="11" fill="#0a0a0a"/><rect x="22" y="30.5" width="4" height="4" fill="#0a0a0a"/></svg>
+        </div>
+        <div class="body">
+          <p>No purchase necessary to enter or win. A purchase will not increase your chances of winning.</p>
+          <small>Void where prohibited // Read the full rules below</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="specs" aria-label="At a glance">
+      <div class="spec red">
+        <div class="k">Prize</div>
+        <div class="v">Metal Card ×1</div>
+        <div class="d">Laser‑engraved Neuroscape card · ARV $25 USD</div>
+      </div>
+      <div class="spec hz">
+        <div class="k">How to enter</div>
+        <div class="v">Comment</div>
+        <div class="d">Answer: "What is your favorite Neuroscape card and why?"</div>
+      </div>
+      <div class="spec cy">
+        <div class="k">Entry window</div>
+        <div class="v">7 Days</div>
+        <div class="d">Closes 11:59 PM PT on the 7th day after publication</div>
+      </div>
+      <div class="spec">
+        <div class="k">Winner</div>
+        <div class="v">Random Draw</div>
+        <div class="d">Within 7 days of close · notified via comment reply</div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <!-- TODO: replace href with the giveaway video URL once published -->
+      <a class="btn" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">Enter on YouTube <span class="chev">&gt;&gt;&gt;</span></a>
+      <a class="btn ghost" href="#rules">Read the rules <span class="chev">&gt;&gt;&gt;</span></a>
+    </div>
+  </section>
+
+  <div class="hazard" aria-hidden="true"></div>
+
+  <!-- ============ RULES ============ -->
+  <div class="layout" id="rules">
+
+    <nav class="toc" aria-label="Table of contents">
+      <div class="head"><span>Index</span><b>11 sections</b></div>
+      <ol>
+        <li><a href="#s1"><span class="n">01</span>Sponsor and Promotion Host</a></li>
+        <li><a href="#s2"><span class="n">02</span>Eligibility</a></li>
+        <li><a href="#s3"><span class="n">03</span>Giveaway Period</a></li>
+        <li><a href="#s4"><span class="n">04</span>How to Enter</a></li>
+        <li><a href="#s5"><span class="n">05</span>Prize</a></li>
+        <li><a href="#s6"><span class="n">06</span>Winner Selection and Notification</a></li>
+        <li><a href="#s7"><span class="n">07</span>Privacy and Personal Information</a></li>
+        <li><a href="#s8"><span class="n">08</span>General Conditions</a></li>
+        <li><a href="#s9"><span class="n">09</span>YouTube Disclaimer</a></li>
+        <li><a href="#s10"><span class="n">10</span>Neuroscape Disclaimer</a></li>
+        <li><a href="#s11"><span class="n">11</span>Official Rules and Contact</a></li>
+      </ol>
+    </nav>
+
+    <article class="rules">
+
+      <p class="intro">
+        <span><b>FILE</b> neuroscape_metal_card_giveaway_rules</span>
+        <span><b>SPONSOR</b> <a class="ent" href="https://mystic-hoard.com/" target="_blank" rel="noopener">Mystic Hoard</a></span>
+        <span><b>HOST</b> <a class="ent" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">5H4N3</a></span>
+        <span><b>STATUS</b> Binding on all entrants</span>
+      </p>
+
+      <!-- 01 -->
+      <section class="sec" id="s1">
+        <header>
+          <span class="num">SEC 01</span>
+          <h2>Sponsor and Promotion Host</h2>
+          <span class="fill"></span>
+          <span class="code">// parties</span>
+        </header>
+        <p>This giveaway (the "Promotion") is sponsored by <strong><a class="ent" href="https://mystic-hoard.com/" target="_blank" rel="noopener">Mystic Hoard</a></strong> ("Sponsor") and hosted by <strong><a class="ent" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">5H4N3</a></strong> ("Host").</p>
+        <p><a class="ent" href="https://mystic-hoard.com/" target="_blank" rel="noopener">Mystic Hoard</a> is responsible for providing the prize. <a class="ent" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">5H4N3</a> is responsible for promoting and administering the giveaway and covering all costs associated with fulfilling and shipping the prize, except for customs duties, import taxes, tariffs, and other government‑imposed fees that may apply to the winner.</p>
+      </section>
+
+      <!-- 02 -->
+      <section class="sec" id="s2">
+        <header>
+          <span class="num">SEC 02</span>
+          <h2>Eligibility</h2>
+          <span class="fill"></span>
+          <span class="code">// who can enter</span>
+        </header>
+        <p>The Promotion is open worldwide to individuals who are at least eighteen (18) years of age at the time of entry, provided participation is permitted under applicable local laws and regulations.</p>
+        <p>Void where prohibited or restricted by law. The Sponsor and Host reserve the right to restrict participation in locations where awarding or shipping the prize is not legally permitted or reasonably possible.</p>
+        <p>Employees, owners, and immediate family members of the Sponsor and Host are not eligible to participate.</p>
+      </section>
+
+      <!-- 03 -->
+      <section class="sec" id="s3">
+        <header>
+          <span class="num">SEC 03</span>
+          <h2>Giveaway Period</h2>
+          <span class="fill"></span>
+          <span class="code">// timing</span>
+        </header>
+        <p>The Promotion begins when the designated giveaway video is published on the <a class="ent" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">5H4N3</a> YouTube channel.</p>
+        <p>The Promotion will remain open for seven (7) calendar days and will close at <strong>11:59 PM Pacific Time</strong> on the seventh calendar day following publication.</p>
+        <p>Entries submitted after the closing deadline will not be eligible.</p>
+      </section>
+
+      <!-- 04 -->
+      <section class="sec" id="s4">
+        <header>
+          <span class="num">SEC 04</span>
+          <h2>How to Enter</h2>
+          <span class="fill"></span>
+          <span class="code">// entry protocol</span>
+        </header>
+        <p>To enter the Promotion:</p>
+        <ol>
+          <li>Visit the designated Neuroscape Metal Card Giveaway video on the <a class="ent" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">5H4N3</a> YouTube channel.</li>
+          <li>Leave a comment answering the following question:</li>
+        </ol>
+        <div class="callout q">
+          <div class="lbl">Entry question</div>
+          <div class="big">"What is your favorite Neuroscape card and why?"</div>
+        </div>
+        <ol start="3" style="counter-reset:step 2">
+          <li>Submit your comment before the Promotion Period ends.</li>
+        </ol>
+        <p>No purchase, payment, or financial contribution of any kind is required to enter.</p>
+        <p>Limit one (1) entry per person. Multiple comments from the same individual will not increase their chances of winning. Automated entries, bots, or other fraudulent methods of entry are prohibited and will result in disqualification.</p>
+        <p>Subscribing to the <a class="ent" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">5H4N3</a> YouTube channel and liking the giveaway video are encouraged but are <strong>not</strong> required to enter.</p>
+        <p>All entries must comply with YouTube's Community Guidelines. Entries containing harassment, hate speech, spam, or other prohibited content may be disqualified.</p>
+      </section>
+
+      <!-- 05 -->
+      <section class="sec" id="s5">
+        <header>
+          <span class="num">SEC 05</span>
+          <h2>Prize</h2>
+          <span class="fill"></span>
+          <span class="code">// payload</span>
+        </header>
+        <p>One (1) winner will receive:</p>
+        <div class="callout prize">
+          <div class="chip" aria-hidden="true"></div>
+          <div>
+            <div class="lbl">Prize</div>
+            <div class="big">One (1) laser‑engraved metal Neuroscape trading card</div>
+            <div class="arv">Generously provided by <a class="ent" href="https://mystic-hoard.com/" target="_blank" rel="noopener">Mystic Hoard</a> · Approximate Retail Value (ARV): <b>$25 USD</b></div>
+          </div>
+        </div>
+        <p>The prize is non‑transferable and cannot be exchanged for cash or substituted for another item, except at the Sponsor's discretion.</p>
+        <p>The Host, <a class="ent" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">5H4N3</a>, will cover all costs associated with fulfilling and shipping the prize to the winner, including standard international shipping where available.</p>
+        <p>The winner is solely responsible for any applicable customs duties, import taxes, tariffs, or other government‑imposed fees required to receive the prize in their country.</p>
+        <p>Any such fees are the responsibility of the winner and will not be reimbursed by the Sponsor or Host.</p>
+      </section>
+
+      <!-- 06 -->
+      <section class="sec" id="s6">
+        <header>
+          <span class="num">SEC 06</span>
+          <h2>Winner Selection and Notification</h2>
+          <span class="fill"></span>
+          <span class="code">// the draw</span>
+        </header>
+        <p>One (1) potential winner will be selected through a random drawing from all eligible entries received during the Promotion Period.</p>
+        <p>The drawing will take place within seven (7) calendar days following the closing of the Promotion.</p>
+        <p>The potential winner will be contacted through a reply to their original YouTube comment and/or another mutually agreed‑upon communication method.</p>
+        <p>The potential winner must respond within seven (7) calendar days of the initial notification to claim the prize and provide the information reasonably necessary to verify eligibility and arrange delivery.</p>
+        <p>If the potential winner does not respond within the specified period, is found to be ineligible, or declines the prize, the Sponsor and Host reserve the right to select an alternate winner through another random drawing.</p>
+        <p>The Sponsor and Host reserve the right to verify the eligibility of the selected winner before awarding the prize.</p>
+        <p>Odds of winning depend on the total number of eligible entries received.</p>
+      </section>
+
+      <!-- 07 -->
+      <section class="sec" id="s7">
+        <header>
+          <span class="num">SEC 07</span>
+          <h2>Privacy and Personal Information</h2>
+          <span class="fill"></span>
+          <span class="code">// data handling</span>
+        </header>
+        <p>Personal information will only be requested from the selected winner and will be used solely for purposes related to administering this Promotion, verifying eligibility, and coordinating prize delivery.</p>
+        <p>Information that may be collected includes the winner's name, contact information, shipping address, and YouTube username.</p>
+        <p>This information may be shared between the Sponsor and Host, and with shipping providers when necessary to fulfill the prize.</p>
+        <p>Personal information will not be sold or used for unrelated marketing purposes without the winner's separate consent.</p>
+        <p>Personal information collected for this Promotion will be retained only as long as reasonably necessary to administer the giveaway and satisfy applicable legal obligations, after which it will be securely deleted, subject to applicable record‑retention requirements.</p>
+      </section>
+
+      <!-- 08 -->
+      <section class="sec" id="s8">
+        <header>
+          <span class="num">SEC 08</span>
+          <h2>General Conditions</h2>
+          <span class="fill"></span>
+          <span class="code">// terms</span>
+        </header>
+        <p>The Sponsor and Host reserve the right to disqualify any individual who attempts to tamper with the entry process, violates these Official Rules, or engages in fraudulent or abusive behavior.</p>
+        <p>The Sponsor and Host reserve the right to modify, suspend, or cancel the Promotion if circumstances beyond their reasonable control compromise its fairness, integrity, or proper administration, subject to applicable law.</p>
+        <p>By participating, entrants agree to abide by these Official Rules and accept the decisions of the Sponsor and Host regarding the administration of the Promotion.</p>
+        <p>Nothing in these Official Rules requires entrants to transfer ownership of, or grant exclusive rights to, any content they submit as an entry.</p>
+      </section>
+
+      <!-- 09 -->
+      <section class="sec" id="s9">
+        <header>
+          <span class="num">SEC 09</span>
+          <h2>YouTube Disclaimer</h2>
+          <span class="fill"></span>
+          <span class="code">// platform</span>
+        </header>
+        <p>This Promotion is in no way sponsored, endorsed, administered by, or associated with YouTube.</p>
+        <p>By entering this Promotion, participants agree to release and hold harmless YouTube from any and all liability related to this Promotion.</p>
+        <p>Participants understand that they are providing their information to the Sponsor and Host, and not to YouTube.</p>
+      </section>
+
+      <!-- 10 -->
+      <section class="sec" id="s10">
+        <header>
+          <span class="num">SEC 10</span>
+          <h2>Neuroscape Disclaimer</h2>
+          <span class="fill"></span>
+          <span class="code">// ip notice</span>
+        </header>
+        <p>Neuroscape is not a sponsor, administrator, or endorser of this Promotion unless expressly stated otherwise.</p>
+        <p>This Promotion is independently organized by <a class="ent" href="https://mystic-hoard.com/" target="_blank" rel="noopener">Mystic Hoard</a> and <a class="ent" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">5H4N3</a> and is not affiliated with or officially endorsed by the creators or owners of Neuroscape.</p>
+      </section>
+
+      <!-- 11 -->
+      <section class="sec" id="s11">
+        <header>
+          <span class="num">SEC 11</span>
+          <h2>Official Rules and Contact Information</h2>
+          <span class="fill"></span>
+          <span class="code">// comms</span>
+        </header>
+        <p>These Official Rules govern the Promotion and will be made available through the description of the designated giveaway video.</p>
+        <p>For questions regarding this Promotion, participants may contact the Sponsor or Host through their respective official communication channels.</p>
+        <dl class="kv">
+          <dt>Sponsor</dt><dd><strong><a class="ent" href="https://mystic-hoard.com/" target="_blank" rel="noopener">Mystic Hoard</a></strong> — <a href="https://mystic-hoard.com/" target="_blank" rel="noopener">mystic-hoard.com</a></dd>
+          <dt>Host</dt><dd><strong><a class="ent" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">5H4N3</a></strong> — <a href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">youtube.com/@5H4N3_NS</a></dd>
+          <dt>YouTube Community Guidelines</dt><dd><a href="https://www.youtube.com/howyoutubeworks/policies/community-guidelines/" target="_blank" rel="noopener">youtube.com/howyoutubeworks/policies/community-guidelines/</a></dd>
+          <dt>YouTube Terms of Service</dt><dd><a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">youtube.com/t/terms</a></dd>
+        </dl>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<div class="hazard thin" aria-hidden="true"></div>
+
+<footer>
+  <div class="wrap">
+    <div class="fine">
+      <b>NO PURCHASE NECESSARY.</b> Open worldwide to individuals 18+ where permitted by law. Void where prohibited.
+      Ends 11:59 PM PT on the seventh calendar day after the giveaway video is published. One (1) winner; ARV $25 USD.
+      Not sponsored, endorsed, or administered by YouTube or Neuroscape. Neuroscape™ is a trademark of Neuroscape, LLC.
+    </div>
+    <div class="stamp" aria-hidden="true">End of file</div>
+  </div>
+</footer>
+
+<script>
+/* Boot sequence: terminal log -> progress -> tear-away reveal. One-shot. */
+(function(){
+  var root = document.documentElement;
+  var boot = document.getElementById('boot');
+  if (!boot) return;
+  if (!/\bbooting\b/.test(root.className)) { boot.parentNode.removeChild(boot); return; }
+
+  var log = boot.querySelector('.log');
+  var bar = boot.querySelector('.bar i');
+  var pct = boot.querySelector('.pct .n');
+  var strips = boot.querySelectorAll('.strip');
+  var n = strips.length;
+  for (var i = 0; i < n; i++) {
+    var top = (i * 100 / n).toFixed(3), bottom = (100 - (i + 1) * 100 / n).toFixed(3);
+    strips[i].style.clipPath = 'inset(' + top + '% 0 ' + bottom + '% 0)';
+    strips[i].style.animationDelay = (i % 2 ? i * 28 : i * 36) + 'ms';
+  }
+
+  function hex(len){ var s=''; for (var i=0;i<len;i++) s+='0123456789ABCDEF'[Math.random()*16|0]; return s; }
+  var lines = [
+    ['<span class="k">&gt;</span> establishing uplink <span class="k">........</span> <span class="ok">OK</span>', 0],
+    ['<span class="k">&gt;</span> handshake 0x' + hex(8) + ' <span class="k">::</span> <span class="cy">NEUROSCAPE/PUBLIC</span>', 160],
+    ['<span class="k">&gt;</span> locating promotion file <span class="k">..</span> <span class="warn">NS-GVW-001</span>', 340],
+    ['<span class="k">&gt;</span> decrypting <span class="k">[</span>metal_card_giveaway<span class="k">]</span>', 520],
+    ['<span class="k">&gt;</span> verifying sponsor <span class="k">.......</span> <span class="ok">MYSTIC HOARD</span>', 820],
+    ['<span class="k">&gt;</span> verifying host <span class="k">..........</span> <span class="ok">5H4N3</span>', 980],
+    ['<span class="k">&gt;</span> no_purchase_necessary <span class="k">....</span> <span class="ok">TRUE</span>', 1140],
+    ['<span class="k">&gt;</span> <span class="err">ACCESS GRANTED</span> <span class="k">//</span> rendering official rules', 1380]
+  ];
+  var timers = [], done = false, cursor = document.createElement('span'); cursor.className = 'cur';
+  log.appendChild(cursor);
+  lines.forEach(function(l){
+    timers.push(setTimeout(function(){
+      var d = document.createElement('div'); d.className = 'ln'; d.innerHTML = l[0];
+      log.insertBefore(d, cursor);
+    }, l[1]));
+  });
+  // Progress: fast, stuttering, with a deliberate stall before the last jump.
+  var steps = [[80,9],[200,23],[380,31],[560,44],[700,58],[900,61],[1060,77],[1200,84],[1340,93],[1460,100]];
+  steps.forEach(function(s){
+    timers.push(setTimeout(function(){ bar.style.width = s[1] + '%'; pct.textContent = s[1] + '%'; }, s[0]));
+  });
+
+  function finish(){
+    if (done) return; done = true;
+    timers.forEach(clearTimeout);
+    bar.style.width = '100%'; pct.textContent = '100%';
+    boot.classList.add('out');
+    root.className = root.className.replace(/\bbooting\b/, '') + ' glitching';
+    setTimeout(function(){
+      if (boot.parentNode) boot.parentNode.removeChild(boot);
+      root.className = root.className.replace(/\bglitching\b/, '').replace(/\s+/g, ' ').trim();
+    }, 650);
+    window.removeEventListener('keydown', finish);
+  }
+  timers.push(setTimeout(finish, 1700));
+  boot.addEventListener('click', finish);
+  window.addEventListener('keydown', finish);
+  setTimeout(finish, 4000); // safety net, never trap the user
+})();
+
+/* Scroll-spy for the index. Progressive enhancement only. */
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#s"]'));
+  if (!links.length) return;
+  var pairs = links.map(function(a){
+    return { a: a, el: document.getElementById(a.getAttribute('href').slice(1)) };
+  }).filter(function(p){ return p.el; });
+  var current = null, ticking = false;
+  function update(){
+    ticking = false;
+    var line = window.innerHeight * 0.33, best = pairs[0];
+    for (var i = 0; i < pairs.length; i++) {
+      if (pairs[i].el.getBoundingClientRect().top <= line) best = pairs[i];
+    }
+    if (best && best.a !== current) {
+      if (current) current.classList.remove('active');
+      current = best.a; current.classList.add('active');
+    }
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+</body>
+</html>
