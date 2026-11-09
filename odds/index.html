@@ -16,6 +16,33 @@
 
 <a class="skip" href="#setup">Skip to calculator</a>
 
+<script>
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    // Each page plays its boot once, then stays quiet for 6 hours.
+    var path = location.pathname.replace(/index\.html$/, '').replace(/\/+$/, '') || '/';
+    var key = '5h4n3-boot:' + path;
+    var now = Date.now(), last = 0;
+    try { last = Number(localStorage.getItem(key)) || 0; } catch (e) {}
+    if (now - last < 6 * 60 * 60 * 1000) return;
+    try { localStorage.setItem(key, String(now)); } catch (e) {}
+    document.documentElement.className += ' booting';
+  })();
+</script>
+<div id="boot" aria-hidden="true">
+  <div class="strip"></div><div class="strip"></div><div class="strip"></div><div class="strip"></div>
+  <div class="strip"></div><div class="strip"></div><div class="strip"></div><div class="strip"></div>
+  <div class="ghost">5H4N3</div>
+  <div class="ui">
+    <div class="hdr"><span>5H4N3 // uplink</span><span>file <b>NS-ODDS-001</b></span></div>
+    <div class="log"></div>
+    <div class="bar"><i></i></div>
+    <div class="pct"><span>computing hand odds</span><span class="n">0%</span></div>
+  </div>
+  <div class="skipboot">click or press any key to skip</div>
+</div>
+
 <div class="topbar">
   <div class="wrap">
     <a class="brand" href="/" aria-label="5H4N3 home">
@@ -280,5 +307,63 @@
 
 <script src="hypergeo.js"></script>
 <script src="app.js"></script>
+<script>
+/* Boot sequence. Once per page every 6 hours. Skip with click or any key. */
+(function(){
+  var root = document.documentElement;
+  var boot = document.getElementById('boot');
+  if (!boot) return;
+  if (!/\bbooting\b/.test(root.className)) { boot.parentNode.removeChild(boot); return; }
+
+  var log = boot.querySelector('.log');
+  var bar = boot.querySelector('.bar i');
+  var pct = boot.querySelector('.pct .n');
+  var strips = boot.querySelectorAll('.strip');
+  var n = strips.length;
+  for (var i = 0; i < n; i++) {
+    var top = (i * 100 / n).toFixed(3), bottom = (100 - (i + 1) * 100 / n).toFixed(3);
+    strips[i].style.clipPath = 'inset(' + top + '% 0 ' + bottom + '% 0)';
+    strips[i].style.animationDelay = (i % 2 ? i * 28 : i * 36) + 'ms';
+  }
+
+  var lines = [
+    ['<span class="k">&gt;</span> establishing uplink <span class="k">........</span> <span class="ok">OK</span>', 0],
+    ['<span class="k">&gt;</span> file <span class="cy">NS-ODDS-001</span> <span class="k">::</span> HYPERGEOMETRIC', 150],
+    ['<span class="k">&gt;</span> binomial engine <span class="k">.......</span> <span class="ok">BIGINT</span>', 340],
+    ['<span class="k">&gt;</span> opening hand <span class="k">.........</span> <span class="warn">5</span>', 520],
+    ['<span class="k">&gt;</span> mulligan model <span class="k">.......</span> <span class="ok">CR 103.5b</span>', 700],
+    ['<span class="k">&gt;</span> <span class="err">EXACT</span> <span class="k">//</span> rendering calculator', 900]
+  ];
+  var timers = [], done = false, cursor = document.createElement('span');
+  cursor.className = 'cur';
+  log.appendChild(cursor);
+  lines.forEach(function(l){
+    timers.push(setTimeout(function(){
+      var d = document.createElement('div'); d.className = 'ln'; d.innerHTML = l[0];
+      log.insertBefore(d, cursor);
+    }, l[1]));
+  });
+  [[90,14],[240,33],[420,52],[640,71],[820,88],[980,100]].forEach(function(s){
+    timers.push(setTimeout(function(){ bar.style.width = s[1] + '%'; pct.textContent = s[1] + '%'; }, s[0]));
+  });
+
+  function finish(){
+    if (done) return; done = true;
+    timers.forEach(clearTimeout);
+    bar.style.width = '100%'; pct.textContent = '100%';
+    boot.classList.add('out');
+    root.className = root.className.replace(/\bbooting\b/, '') + ' glitching';
+    setTimeout(function(){
+      if (boot.parentNode) boot.parentNode.removeChild(boot);
+      root.className = root.className.replace(/\bglitching\b/, '').replace(/\s+/g, ' ').trim();
+    }, 650);
+    window.removeEventListener('keydown', finish);
+  }
+  timers.push(setTimeout(finish, 1400));
+  boot.addEventListener('click', finish);
+  window.addEventListener('keydown', finish);
+  setTimeout(finish, 4000);
+})();
+</script>
 </body>
 </html>

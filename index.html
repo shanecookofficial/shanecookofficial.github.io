@@ -19,7 +19,15 @@
 <script>
   (function(){
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!reduce) document.documentElement.className += ' booting';
+    if (reduce) return;
+    // Each page plays its boot once, then stays quiet for 6 hours.
+    var path = location.pathname.replace(/index\.html$/, '').replace(/\/+$/, '') || '/';
+    var key = '5h4n3-boot:' + path;
+    var now = Date.now(), last = 0;
+    try { last = Number(localStorage.getItem(key)) || 0; } catch (e) {}
+    if (now - last < 6 * 60 * 60 * 1000) return;
+    try { localStorage.setItem(key, String(now)); } catch (e) {}
+    document.documentElement.className += ' booting';
   })();
 </script>
 <div id="boot" aria-hidden="true">
