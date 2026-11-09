@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opening Hand Odds — Neuroscape Hypergeometric Calculator | 5H4N3</title>
+<meta name="description" content="Exact odds of drawing the cards you need in your Neuroscape opening hand, and how much the mulligan helps. Hypergeometric calculator with Neuroscape's 5-card hand and bottom-and-redraw mulligan built in. Works for any card game.">
+<meta name="theme-color" content="#080809">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080809'/%3E%3Cpath d='M0 0h14v14H0z' fill='%23c8102e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/site.css">
+</head>
+<body class="page-odds">
+
+<a class="skip" href="#setup">Skip to calculator</a>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="5H4N3 home">
+      <span class="mark">5H4N3</span>
+      <span class="sep">///</span>
+      <span class="sub">Hand Odds</span>
+    </a>
+    <nav class="nav" aria-label="Page">
+      <a href="#setup">Setup</a>
+      <a href="#odds">Odds</a>
+      <a href="#mulligan">Mulligan</a>
+      <a href="#math">Math</a>
+    </nav>
+    <div class="status" aria-hidden="true">
+      <span class="hide-m">FILE <b>NS-ODDS-001</b></span>
+      <span>MATH <b class="ok">EXACT</b></span>
+      <span><b class="blink">█</b></span>
+    </div>
+  </div>
+</div>
+
+<main id="top" class="wrap">
+
+  <section class="hero">
+    <div class="kicker">
+      <span class="tag">Tool file</span>
+      <span class="line"></span>
+      <span class="tag cyan">Hypergeometric</span>
+    </div>
+    <h1 class="title">
+      Opening Hand<br>
+      <span class="accent">Odds</span>
+    </h1>
+    <p class="subtitle">
+      How likely is it that your opening hand has the cards you need, and how much does the mulligan help?
+      Exact probabilities, preset for <strong>Neuroscape</strong>'s 5-card hand and bottom-and-redraw mulligan. Change the numbers for any card game.
+    </p>
+    <div class="hero-meta">
+      <span class="tag ok">Exact math, no simulation</span>
+      <span class="tag hz">Neuroscape CR 103.5</span>
+      <span class="tag cyan">Shareable links</span>
+    </div>
+  </section>
+
+  <div class="hazard" aria-hidden="true"></div>
+
+  <div class="calc">
+
+    <!-- ============ INPUTS ============ -->
+    <div class="calc-inputs">
+      <section class="sec setup" id="setup">
+        <header>
+          <span class="num">SEC 01</span>
+          <h2>Deck and hand</h2>
+          <span class="fill"></span>
+          <span class="code">// setup</span>
+        </header>
+        <div class="fields setup-fields">
+          <label class="field">
+            <span class="k">Cards in deck</span>
+            <input class="inp" id="deck" type="number" inputmode="numeric" min="1" max="1000" step="1" value="50">
+            <span class="d">Cyberdeck only. RAM is a separate deck.</span>
+          </label>
+          <label class="field">
+            <span class="k">Opening hand</span>
+            <input class="inp" id="hand" type="number" inputmode="numeric" min="0" max="12" step="1" value="5">
+            <span class="d">Neuroscape deals 5.</span>
+          </label>
+          <label class="field">
+            <span class="k">Extra draws</span>
+            <input class="inp" id="extra" type="number" inputmode="numeric" min="0" max="40" step="1" value="0">
+            <span class="d">Cards drawn after the hand. 0 = opening hand only.</span>
+          </label>
+        </div>
+        <div class="presets" aria-label="Presets">
+          <button type="button" class="chip" data-deck="50" data-hand="5">Neuroscape · 50 / 5</button>
+          <button type="button" class="chip" data-deck="30" data-hand="5">NS draft · 30 / 5</button>
+          <button type="button" class="chip" data-deck="60" data-hand="7">60 / 7</button>
+          <button type="button" class="chip" data-deck="40" data-hand="5">40 / 5</button>
+        </div>
+      </section>
+
+      <section class="sec" id="cards">
+        <header>
+          <span class="num">SEC 02</span>
+          <h2>Cards and combos</h2>
+          <span class="fill"></span>
+          <span class="code" id="combo-count">// targets</span>
+        </header>
+        <div class="tblwrap gridwrap">
+          <table class="grid" id="grid">
+            <thead><tr id="grid-head"></tr></thead>
+            <tbody id="grid-body"></tbody>
+          </table>
+        </div>
+        <div class="combowrap">
+          <table class="grid combogrid" id="combo-grid">
+            <thead><tr id="combo-head"></tr></thead>
+            <tbody id="combo-body"></tbody>
+          </table>
+        </div>
+        <div class="row-actions">
+          <button type="button" class="chip" id="add-card">+ Card</button>
+          <button type="button" class="chip" id="add-combo">+ Combo</button>
+          <button type="button" class="chip" id="share">Copy link to this setup</button>
+          <span class="copied" id="copied" aria-live="polite"></span>
+        </div>
+        <p class="hint">
+          Each <strong>combo</strong> row is one hand you'd be happy with. The number under a card is how many copies that combo needs (0 = not part of it). You hit if <em>any one</em> combo is fully in hand. <strong>Max</strong> is optional and caps a card no matter which combo; leave it blank for no cap.
+        </p>
+        <div class="errs" id="errors" role="alert"></div>
+      </section>
+    </div>
+
+    <!-- ============ RESULTS ============ -->
+    <div class="calc-results" aria-live="polite">
+      <section class="sec" id="odds">
+        <header>
+          <span class="num">SEC 03</span>
+          <h2>Opening hand</h2>
+          <span class="fill"></span>
+          <span class="code">// no mulligan</span>
+        </header>
+        <div class="bigstat">
+          <div class="k">Chance it's there</div>
+          <div class="v" id="p-open">—</div>
+          <div class="d" id="p-open-d">Enter your deck and the cards you want.</div>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <div class="k">Odds</div>
+            <div class="v" id="p-open-odds">—</div>
+            <div class="d">Roughly one hand in this many.</div>
+          </div>
+          <div class="stat">
+            <div class="k">Chance you miss</div>
+            <div class="v" id="p-miss">—</div>
+            <div class="d">How often you'll be reaching for the mulligan.</div>
+          </div>
+          <div class="stat cy">
+            <div class="k">After best mulligan</div>
+            <div class="v" id="p-full">—</div>
+            <div class="d" id="p-full-d">Keep what you need, send back the rest.</div>
+          </div>
+        </div>
+
+        <div id="combos-out" hidden>
+          <h3 class="sub-h">Combo by combo <span class="mono-note">each on its own</span></h3>
+          <div class="tblwrap">
+            <table class="tbl compact">
+              <thead><tr><th>Combo</th><th>Needs</th><th class="val">Opening hand</th><th class="val wrap">After mulligan,<br>chasing only this</th><th class="barcol"><span class="sr">Bar</span></th></tr></thead>
+              <tbody id="combo-rows"></tbody>
+            </table>
+          </div>
+          <p class="hint" id="combo-note"></p>
+        </div>
+
+        <div id="marginals"></div>
+      </section>
+
+      <section class="sec" id="mulligan">
+        <header>
+          <span class="num">SEC 04</span>
+          <h2>Mulligan, before you look</h2>
+          <span class="fill"></span>
+          <span class="code">// one shot, bottom &amp; redraw</span>
+        </header>
+        <p class="lead" id="mull-lead">Your overall chance of ending with the cards you need if, on a miss, you keep the copies you already have and send back up to this many other cards.</p>
+        <div class="tblwrap">
+          <table class="tbl" id="mull-table">
+            <thead><tr><th>Willing to send back</th><th class="val">Chance</th><th class="barcol"><span class="sr">Bar</span></th><th class="val">vs. no mulligan</th></tr></thead>
+            <tbody id="mull-rows"></tbody>
+          </table>
+        </div>
+        <p class="hint" id="mull-note"></p>
+      </section>
+
+      <section class="sec" id="seen">
+        <header>
+          <span class="num">SEC 05</span>
+          <h2>Mulligan, hand in front of you</h2>
+          <span class="fill"></span>
+          <span class="code">// live decision</span>
+        </header>
+        <p class="lead">You've drawn. Enter how many copies of each card are actually in your hand, and see what sending cards back does. Each row shows the best cards to keep for that many sent back.</p>
+        <div class="fields seen-fields" id="seen-inputs"></div>
+        <p class="hint" id="seen-summary"></p>
+        <div class="tblwrap">
+          <table class="tbl" id="seen-table">
+            <thead><tr><th>Send back</th><th>Best keep</th><th>Chasing</th><th class="val">Chance</th><th class="barcol"><span class="sr">Bar</span></th></tr></thead>
+            <tbody id="seen-rows"></tbody>
+          </table>
+        </div>
+        <div class="errs" id="seen-errors" role="alert"></div>
+        <p class="hint" id="seen-note"></p>
+      </section>
+    </div>
+  </div>
+
+  <!-- ============ MATH ============ -->
+  <section class="sec math" id="math">
+    <header>
+      <span class="num">SEC 06</span>
+      <h2>How the math works</h2>
+      <span class="fill"></span>
+      <span class="code">// show your work</span>
+    </header>
+
+    <h3 class="sub-h">One card</h3>
+    <p>Drawing cards from a shuffled deck is sampling <em>without replacement</em>, which is what the hypergeometric distribution describes. With <b>N</b> cards in the deck, <b>K</b> copies of the card you want, and <b>n</b> cards drawn, the chance of seeing exactly <b>k</b> copies is</p>
+    <div class="formula">P(exactly k) = C(K, k) · C(N − K, n − k) / C(N, n)</div>
+    <p><b>C(a, b)</b> is "a choose b", the number of ways to pick b items from a. The numerator counts hands with exactly k copies (k of the wanted card, n − k of everything else); the denominator counts every possible hand. "At least k" is the sum of the exact terms from k upward.</p>
+
+    <h3 class="sub-h">Worked example</h3>
+    <p>Neuroscape: 50-card cyberdeck, four copies of a card, 5-card hand. Hands with none of it: C(46, 5) = 1,370,754. All hands: C(50, 5) = 2,118,760. So the chance of zero copies is 64.70%, and the chance of at least one is <b>35.30%</b>.</p>
+
+    <h3 class="sub-h">Several cards at once</h3>
+    <p>Wanting card A <em>and</em> card B in the same hand is the multivariate hypergeometric distribution. A hand with c₁ copies of the first card, c₂ of the second, and so on, has probability</p>
+    <div class="formula">P(c₁, …, cₘ) = C(K₁, c₁) · C(K₂, c₂) · … · C(R, n − Σc) / C(N, n)</div>
+    <p>where <b>R</b> is the number of cards that aren't on any line. The calculator adds up every combination of counts in which some combo has all of its needs met and no card is over its <b>Max</b>. Hands can't contain more copies than you run, and the lines are treated as distinct cards, so one card can't count toward two lines.</p>
+
+    <h3 class="sub-h">Either combo will do</h3>
+    <p>With two or more combos the question becomes "A <em>or</em> B". Hands that satisfy both are counted once, never twice, because the sum runs over distinct count vectors and simply asks whether at least one combo is complete. You can check it by hand: P(A or B) = P(A) + P(B) − P(A and B). For Intern + Trust Fund Baby or Intern + Seeker Drones, all 4-ofs in a 50-card deck: 10.76% + 10.76% − 2.67% = <b>18.85%</b>, which is what the calculator reports. Each hand is counted once, so every term stays positive and nothing is lost to cancellation.</p>
+
+    <h3 class="sub-h">The mulligan</h3>
+    <p>Neuroscape's rule (Comprehensive Rules 103.5b): once per game, after drawing your five, you may put <em>any number</em> of cards from your hand on the bottom of your cyberdeck, then draw that many from the top. Two things follow from that:</p>
+    <ul>
+      <li>The cards you send back go <em>under</em> the deck. You won't see them again during the mulligan, so each replacement is drawn from the <b>N − 5</b> cards that were never in your hand, and every copy you didn't draw is still in there.</li>
+      <li>You pick which cards to keep. If you already hold a copy a combo needs, keeping it is never worse than redrawing it. With one combo the calculator keeps the copies that count toward it and sends back everything else: cards not on any line first, then spare copies.</li>
+      <li>With several combos, which pieces to keep depends on the hand. Holding Trust Fund Baby and Seeker Drones but no Intern, you should keep just one of them and dig four cards for the Intern (32.0%) rather than keep both and dig three (24.9%). In other spots keeping toward two combos at once is right. So for every hand the calculator tries each set of combos you might chase, keeps the copies that count toward that set, and uses whichever plan has the best chance. For "at least" targets that family contains the best possible decision. If you set a <b>Max</b>, it is a strong heuristic rather than a proven optimum. The "hand in front of you" table shows you the winning keep.</li>
+    </ul>
+    <p>For a hand you're holding, the fix is one more hypergeometric draw: pull X cards from the N − 5 unseen cards, which still hold every copy you didn't draw. Continuing the example, if your five whiffed on a 4-of and you send all five back, you draw 5 from 45 cards with 4 hits: 1 − C(41, 5) / C(45, 5) = 1 − 749,398 / 1,221,759 = <b>38.66%</b>.</p>
+    <p>Before you've looked, the calculator walks through every possible opening hand, weights each by its probability, applies the keep-and-redraw rule, and adds it up. In the example: 35.30% of hands have the card already; the other 64.70% get a 38.66% shot at it, for a total of <b>60.32%</b>. The "willing to send back" table caps how many cards you'd let go, since many players won't ship a decent hand to dig for one piece.</p>
+
+    <h3 class="sub-h">Accuracy</h3>
+    <p>Binomial coefficients are computed as exact integers (JavaScript BigInt) and converted to decimals once. Every probability is a sum of positive terms, so no precision is lost to cancellation; results are good to well over ten significant figures, far beyond the two decimals shown. The engine has been cross-checked against an independent exact brute-force enumeration and against Monte Carlo simulation of the physical shuffle, deal, bottom, and redraw.</p>
+
+    <h3 class="sub-h">Assumptions</h3>
+    <ul>
+      <li>The deck is thoroughly shuffled and nothing manipulates draws (no scry, tutor, or deck-stacking effects).</li>
+      <li>"Extra draws" are plain draws off the top after the opening hand and any mulligan. For Neuroscape, remember you can draw up to two per turn, or install RAM instead.</li>
+      <li>Each line is a distinct set of cards. Interchangeable cards (say, any cheap blocker) can share one line by adding their copies together.</li>
+      <li>Mulligan math requires the unseen part of the deck to cover the redraw (deck size ≥ 2 × hand + extra draws). That holds for every legal Neuroscape deck.</li>
+    </ul>
+    <p class="hint">Found a number you think is wrong? Comment on any <a href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">5H4N3</a> video with the link from "Copy link to this setup" and the expected value.</p>
+  </section>
+
+</main>
+
+<div class="hazard thin" aria-hidden="true"></div>
+
+<footer>
+  <div class="wrap">
+    <div class="fine">
+      <b>5H4N3</b> · <a href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">youtube.com/@5H4N3_NS</a> · <a href="/">Channel home</a><br>
+      Independent Neuroscape channel. Not sponsored, endorsed, or administered by YouTube or Neuroscape.
+      Neuroscape™ is a trademark of Neuroscape, LLC. Rules references are to the Neuroscape Comprehensive Rules v1.2.
+    </div>
+    <div class="stamp" aria-hidden="true">Run the numbers</div>
+  </div>
+</footer>
+
+<script src="hypergeo.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
