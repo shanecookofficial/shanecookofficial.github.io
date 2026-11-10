@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scrapheap — Common-rarity Neuroscape | 5H4N3</title>
+<meta name="description" content="Welcome to Scrapheap, a community-driven alternative format for Neuroscape TCG. Commons in the deck. Any rarity on the mainframe.">
+<meta name="theme-color" content="#080809">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080809'/%3E%3Cpath d='M0 0h14v14H0z' fill='%23c8102e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/site.css">
+</head>
+<body class="page-scrapheap">
+
+<a class="skip" href="#rules">Skip to format file</a>
+
+<script>
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    var path = location.pathname.replace(/index\.html$/, '').replace(/\/+$/, '') || '/';
+    var key = '5h4n3-boot:' + path;
+    var now = Date.now(), last = 0;
+    try { last = Number(localStorage.getItem(key)) || 0; } catch (e) {}
+    if (now - last < 6 * 60 * 60 * 1000) return;
+    try { localStorage.setItem(key, String(now)); } catch (e) {}
+    document.documentElement.className += ' booting';
+  })();
+</script>
+<div id="boot" aria-hidden="true">
+  <div class="strip"></div><div class="strip"></div><div class="strip"></div><div class="strip"></div>
+  <div class="strip"></div><div class="strip"></div><div class="strip"></div><div class="strip"></div>
+  <div class="ghost">5H4N3</div>
+  <div class="ui">
+    <div class="hdr"><span>5H4N3 // uplink</span><span>file <b>NS-SH-001</b></span></div>
+    <div class="log"></div>
+    <div class="bar"><i></i></div>
+    <div class="pct"><span>sorting the scrap pile</span><span class="n">0%</span></div>
+  </div>
+  <div class="skipboot">click or press any key to skip</div>
+</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="5H4N3 home">
+      <span class="mark">5H4N3</span>
+      <span class="sep">///</span>
+      <span class="sub">Scrapheap</span>
+    </a>
+    <nav class="nav" aria-label="Page">
+      <a href="#s1">Cards</a>
+      <a href="#s2">Rarity</a>
+      <a href="#s3">Mainframe</a>
+      <a href="#s4">Deck</a>
+    </nav>
+    <div class="status" aria-hidden="true">
+      <span class="hide-m">FILE <b>NS-SH-001</b></span>
+      <span class="hide-m">REV <b>1.0</b></span>
+      <span>POOL <b class="ok">COMMONS</b></span>
+      <span><b class="blink">█</b></span>
+    </div>
+  </div>
+</div>
+
+<main id="top" class="wrap">
+
+  <section class="hero">
+    <div class="kicker">
+      <span class="tag">Format file</span>
+      <span class="line"></span>
+      <span class="tag cyan">Community format</span>
+    </div>
+
+    <h1 class="title">Scrapheap</h1>
+
+    <p class="subtitle">
+      Welcome to Scrapheap, a community-driven alternative format for Neuroscape TCG that puts the focus on creativity, accessibility, and deck-building ingenuity.
+    </p>
+    <p class="subtitle">
+      In a world where the biggest corporations hold all the cards, Scrapheap is where the streets fight back. This format challenges divers to build competitive decks using a more accessible card pool, giving overlooked cards and unconventional strategies an opportunity to shine.
+    </p>
+
+    <div class="specs" aria-label="At a glance">
+      <div class="spec red">
+        <div class="k">Card pool</div>
+        <div class="v">Commons</div>
+        <div class="d">Rarity code C.</div>
+      </div>
+      <div class="spec hz">
+        <div class="k">Mainframe</div>
+        <div class="v">Any rarity</div>
+        <div class="d">The one you start with, and the optional one in the sideboard.</div>
+      </div>
+      <div class="spec cy">
+        <div class="k">Cyberdeck</div>
+        <div class="v">50–255</div>
+        <div class="d">RAM deck is exactly 25.</div>
+      </div>
+      <div class="spec">
+        <div class="k">Copies</div>
+        <div class="v">Max four</div>
+        <div class="d">Basic RAM is any number.</div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn" href="#rules">Read the format file <span class="chev">&gt;&gt;&gt;</span></a>
+      <a class="btn ghost" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">5H4N3 on YouTube <span class="chev">&gt;&gt;&gt;</span></a>
+    </div>
+  </section>
+
+  <div class="hazard" aria-hidden="true"></div>
+
+  <div class="layout" id="rules">
+
+    <nav class="toc" aria-label="Table of contents">
+      <div class="head"><span>Index</span><b>4 sections</b></div>
+      <ol>
+        <li><a href="#s1"><span class="n">01</span>Legal cards</a></li>
+        <li><a href="#s2"><span class="n">02</span>Rarity</a></li>
+        <li><a href="#s3"><span class="n">03</span>Mainframes</a></li>
+        <li><a href="#s4"><span class="n">04</span>Deckbuilding</a></li>
+      </ol>
+    </nav>
+
+    <article class="rules">
+
+      <p class="intro">
+        <span><b>FILE</b> scrapheap_format</span>
+        <span><b>REV</b> 1.0 · Nov 10, 2026</span>
+        <span><b>HOST</b> <a class="ent" href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">5H4N3</a></span>
+        <span><b>PLAY</b> Neuroscape Comprehensive Rules</span>
+      </p>
+
+      <section class="sec" id="s1">
+        <header>
+          <span class="num">SEC 01</span>
+          <h2>Legal cards</h2>
+          <span class="fill"></span>
+          <span class="code">// CR 100.2a</span>
+        </header>
+        <p>Play is constructed Neuroscape. Scrapheap adds one limit. The cyberdeck, the RAM deck, and the sideboard’s non-mainframe cards are commons. The mainframe can be any rarity, including the optional one in the sideboard. Basic RAM is legal in any number.</p>
+        <div class="tblwrap">
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>Slot</th>
+                <th>Legal cards</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cyberdeck</td>
+                <td>50–255 commons. No RAM. No mainframe.</td>
+              </tr>
+              <tr>
+                <td>RAM deck</td>
+                <td>Exactly 25. Common RAM, plus any number of Basic RAM.</td>
+              </tr>
+              <tr>
+                <td>Mainframe</td>
+                <td>Exactly one, in the mainframe zone. Any rarity.</td>
+              </tr>
+              <tr>
+                <td>Sideboard</td>
+                <td>Up to 12 commons, plus one optional mainframe of any rarity. None of the 12 can be RAM or a mainframe. May be empty.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="sec" id="s2">
+        <header>
+          <span class="num">SEC 02</span>
+          <h2>Rarity</h2>
+          <span class="fill"></span>
+          <span class="code">// CR 210.1e</span>
+        </header>
+        <p>A card is common here when a printing has rarity code <strong>C</strong>, to the right of the set symbol. The faction hex for a common is copper or bronze. Tokens use that fill too. Their code is T.</p>
+        <p>Any printing of a common is legal, including a promo or an art rare. A card printed only above common is not, unless it is a mainframe.</p>
+        <div class="tblwrap">
+          <table class="tbl compact">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Printed as</th>
+                <th>Scrapheap</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hi">
+                <td>C</td>
+                <td>Common</td>
+                <td>Legal. Any printing.</td>
+              </tr>
+              <tr class="hi">
+                <td>B</td>
+                <td>Basic</td>
+                <td>Basic RAM in the RAM deck. Any number.</td>
+              </tr>
+              <tr>
+                <td>U</td>
+                <td>Uncommon</td>
+                <td>Legal if it is a mainframe, or a common printing exists.</td>
+              </tr>
+              <tr>
+                <td>R</td>
+                <td>Rare</td>
+                <td>Legal if it is a mainframe, or a common printing exists.</td>
+              </tr>
+              <tr>
+                <td>QR</td>
+                <td>Quantum rare</td>
+                <td>Legal if it is a mainframe, or a common printing exists.</td>
+              </tr>
+              <tr>
+                <td>AR</td>
+                <td>Art rare</td>
+                <td>Legal if it is a mainframe, or a common printing exists.</td>
+              </tr>
+              <tr>
+                <td>SC</td>
+                <td>Source code</td>
+                <td>Legal if it is a mainframe, or a common printing exists.</td>
+              </tr>
+              <tr>
+                <td>P</td>
+                <td>Promo</td>
+                <td>Legal if it is a mainframe, or a common printing exists.</td>
+              </tr>
+              <tr>
+                <td>T</td>
+                <td>Token</td>
+                <td>Not a deck card.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="sec" id="s3">
+        <header>
+          <span class="num">SEC 03</span>
+          <h2>Mainframes</h2>
+          <span class="fill"></span>
+          <span class="code">// CR 303</span>
+        </header>
+        <p>You start each game with exactly one mainframe in the mainframe zone. It is never in play (CR 303.1, CR 303.8). It can be any rarity. So can the optional mainframe in the sideboard. Declare which one you are using at the start of each game (CR 100.3).</p>
+        <p>Only a card with the card type mainframe is exempt. A rare character, program, gear, or RAM card is still illegal.</p>
+      </section>
+
+      <section class="sec" id="s4">
+        <header>
+          <span class="num">SEC 04</span>
+          <h2>Deckbuilding</h2>
+          <span class="fill"></span>
+          <span class="code">// CR 100.4</span>
+        </header>
+        <ul>
+          <li><strong>Four copies.</strong> No more than four of a name across the cyberdeck, sideboard, and RAM deck. Basic RAM is exempt (CR 100.4). A card that allows more than four may also use those copies in the sideboard (CR 100.4a). The rulebook only counts the cyberdeck and sideboard. This format follows the Comprehensive Rules.</li>
+          <li><strong>Between games.</strong> Swap among the cyberdeck, the mainframe, and the sideboard only. The RAM deck stays as built. The deck you start the next game with still has to be legal.</li>
+          <li><strong>Iconic.</strong> Same four-copy limit. You cannot control more than one iconic object with the same name (CR 205.4b).</li>
+          <li><strong>Factions.</strong> No extra faction limit.</li>
+          <li><strong>Ban list.</strong> None in rev 1.0. Changes get listed on this page first.</li>
+          <li><strong>Limited.</strong> Draft and sealed are not Scrapheap. Those use a 30-card cyberdeck minimum (CR 803, CR 804).</li>
+        </ul>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<div class="hazard thin" aria-hidden="true"></div>
+
+<footer>
+  <div class="wrap">
+    <div class="fine">
+      <b>5H4N3</b> · <a href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">youtube.com/@5H4N3_NS</a> · Format file NS-SH-001, rev 1.0<br>
+      Fan format for Neuroscape constructed. Not sponsored, endorsed, or administered by Neuroscape, LLC.
+      Neuroscape™ is a trademark of Neuroscape, LLC.
+      Deck size, rarity codes, and the four-copy rule follow Comprehensive Rules v1.2.
+    </div>
+    <div class="stamp" aria-hidden="true">Commons</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var boot = document.getElementById('boot');
+  if (!boot) return;
+  if (!/\bbooting\b/.test(root.className)) { boot.parentNode.removeChild(boot); return; }
+
+  var log = boot.querySelector('.log');
+  var bar = boot.querySelector('.bar i');
+  var pct = boot.querySelector('.pct .n');
+  var strips = boot.querySelectorAll('.strip');
+  var n = strips.length;
+  for (var i = 0; i < n; i++) {
+    var top = (i * 100 / n).toFixed(3), bottom = (100 - (i + 1) * 100 / n).toFixed(3);
+    strips[i].style.clipPath = 'inset(' + top + '% 0 ' + bottom + '% 0)';
+    strips[i].style.animationDelay = (i % 2 ? i * 28 : i * 36) + 'ms';
+  }
+
+  var lines = [
+    ['<span class="k">&gt;</span> establishing uplink <span class="k">........</span> <span class="ok">OK</span>', 0],
+    ['<span class="k">&gt;</span> format <span class="cy">SCRAPHEAP</span> <span class="k">::</span> CONSTRUCTED', 160],
+    ['<span class="k">&gt;</span> rarity gate <span class="k">...........</span> <span class="warn">COMMON</span>', 340],
+    ['<span class="k">&gt;</span> mainframe slot <span class="k">........</span> <span class="ok">ANY</span>', 520],
+    ['<span class="k">&gt;</span> basic_ram <span class="k">.............</span> <span class="ok">LEGAL</span>', 700],
+    ['<span class="k">&gt;</span> ban_list <span class="k">..............</span> <span class="ok">EMPTY</span>', 860],
+    ['<span class="k">&gt;</span> <span class="err">FILE OPEN</span> <span class="k">//</span> rendering format', 1040]
+  ];
+  var timers = [], done = false, cursor = document.createElement('span');
+  cursor.className = 'cur';
+  log.appendChild(cursor);
+  lines.forEach(function(l){
+    timers.push(setTimeout(function(){
+      var d = document.createElement('div'); d.className = 'ln'; d.innerHTML = l[0];
+      log.insertBefore(d, cursor);
+    }, l[1]));
+  });
+  [[90,12],[220,28],[400,47],[620,63],[800,81],[1000,94],[1180,100]].forEach(function(s){
+    timers.push(setTimeout(function(){ bar.style.width = s[1] + '%'; pct.textContent = s[1] + '%'; }, s[0]));
+  });
+
+  function finish(){
+    if (done) return; done = true;
+    timers.forEach(clearTimeout);
+    bar.style.width = '100%'; pct.textContent = '100%';
+    boot.classList.add('out');
+    root.className = root.className.replace(/\bbooting\b/, '') + ' glitching';
+    setTimeout(function(){
+      if (boot.parentNode) boot.parentNode.removeChild(boot);
+      root.className = root.className.replace(/\bglitching\b/, '').replace(/\s+/g, ' ').trim();
+    }, 650);
+    window.removeEventListener('keydown', finish);
+  }
+  timers.push(setTimeout(finish, 1500));
+  boot.addEventListener('click', finish);
+  window.addEventListener('keydown', finish);
+  setTimeout(finish, 4000);
+})();
+
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#s"]'));
+  if (!links.length) return;
+  var pairs = links.map(function(a){
+    return { a: a, el: document.getElementById(a.getAttribute('href').slice(1)) };
+  }).filter(function(p){ return p.el; });
+  var current = null, ticking = false;
+  function update(){
+    ticking = false;
+    var line = window.innerHeight * 0.33, best = pairs[0];
+    for (var i = 0; i < pairs.length; i++) {
+      if (pairs[i].el.getBoundingClientRect().top <= line) best = pairs[i];
+    }
+    if (best && best.a !== current) {
+      if (current) current.classList.remove('active');
+      current = best.a; current.classList.add('active');
+    }
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+</body>
+</html>
