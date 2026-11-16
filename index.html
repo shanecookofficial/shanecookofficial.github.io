@@ -6,7 +6,35 @@
 <title>5H4N3 — Neuroscape on camera</title>
 <meta name="description" content="5H4N3 makes Neuroscape videos: deck techs, guest matches, weekly market reports, card deep dives, precon upgrades, and Genesis Unlimited openings.">
 <meta name="theme-color" content="#080809">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080809'/%3E%3Cpath d='M0 0h14v14H0z' fill='%23c8102e'/%3E%3C/svg%3E">
+<!-- Favicon: B.O.B. normally, Jingle B.O.B. during the holiday window (visitor's local date).
+     Icon sets live at /assets/bob/ and /assets/jingle-bob/ in the site root. -->
+<script>
+(function(){
+  var HOLIDAY_START = [12, 1]; // [month, day] inclusive — first day Jingle B.O.B. shows
+  var HOLIDAY_END   = [1, 1];  // [month, day] inclusive — last day (window may wrap past New Year)
+  var now = new Date(), md = (now.getMonth() + 1) * 100 + now.getDate();
+  var s = HOLIDAY_START[0] * 100 + HOLIDAY_START[1], e = HOLIDAY_END[0] * 100 + HOLIDAY_END[1];
+  var holiday = s <= e ? (md >= s && md <= e) : (md >= s || md <= e);
+  var base = '/assets/' + (holiday ? 'jingle-bob' : 'bob') + '/';
+  [
+    ['icon', 'favicon.ico', { sizes: '48x48' }],
+    ['icon', 'favicon.svg', { type: 'image/svg+xml' }],
+    ['icon', 'favicon-32.png', { type: 'image/png', sizes: '32x32' }],
+    ['icon', 'favicon-192.png', { type: 'image/png', sizes: '192x192' }],
+    ['apple-touch-icon', 'apple-touch-icon.png', {}]
+  ].forEach(function (l) {
+    var el = document.createElement('link');
+    el.rel = l[0]; el.href = base + l[1];
+    for (var k in l[2]) el.setAttribute(k, l[2][k]);
+    document.head.appendChild(el);
+  });
+})();
+</script>
+<noscript>
+  <link rel="icon" href="/assets/bob/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/assets/bob/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/bob/apple-touch-icon.png">
+</noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -85,28 +113,28 @@
             Videos on the cyberpunk TCG <strong>Neuroscape</strong>. Full builds, guest matches, a weekly price report, and the cards worth arguing about.
           </p>
           <div class="hero-meta">
-            <span class="tag ok">265 subscribers</span>
-            <span class="tag">60 videos</span>
+            <span class="tag ok">281 subscribers</span>
+            <span class="tag">72 videos</span>
             <span class="tag hz">6 series</span>
           </div>
           <div class="cta-row">
-            <a class="btn" href="https://www.youtube.com/watch?v=kiUUvvmkvfc" target="_blank" rel="noopener">Latest video <span class="chev">&gt;&gt;&gt;</span></a>
+            <a class="btn" href="https://www.youtube.com/watch?v=Lpz95qJhZV4" target="_blank" rel="noopener">Latest video <span class="chev">&gt;&gt;&gt;</span></a>
             <a class="btn ghost" href="https://www.youtube.com/@5H4N3_NS?sub_confirmation=1" target="_blank" rel="noopener">Subscribe <span class="chev">&gt;&gt;&gt;</span></a>
           </div>
         </div>
 
-        <a class="feature" href="https://www.youtube.com/watch?v=kiUUvvmkvfc" target="_blank" rel="noopener">
+        <a class="feature" href="https://www.youtube.com/watch?v=Lpz95qJhZV4" target="_blank" rel="noopener">
           <div class="shot">
-            <img src="https://i.ytimg.com/vi/kiUUvvmkvfc/hqdefault.jpg" alt="">
+            <img src="https://i.ytimg.com/vi/Lpz95qJhZV4/hqdefault.jpg" alt="">
             <span class="play" aria-hidden="true">
               <svg width="16" height="18" viewBox="0 0 16 18" fill="currentColor"><path d="M0 0v18l16-9z"/></svg>
             </span>
-            <span class="dur">7:49</span>
+            <span class="dur">0:38</span>
           </div>
           <div class="body">
-            <div class="k">Latest file · Market</div>
-            <h2>Asset Appreciation<br>10/30 – 11/06</h2>
-            <div class="d">What moved this week, and what sat still.</div>
+            <div class="k">Latest file · Packs</div>
+            <h2>Genesis Unlimited<br>#86</h2>
+            <div class="d">Today’s opening, on camera.</div>
           </div>
         </a>
       </div>
@@ -114,8 +142,8 @@
       <div class="specs" aria-label="Channel at a glance">
         <div class="spec red">
           <div class="k">Now playing</div>
-          <div class="v">Market</div>
-          <div class="d">Weekly asset report, Friday to Friday</div>
+          <div class="v">Packs</div>
+          <div class="d">Genesis Unlimited · opening #86</div>
         </div>
         <div class="spec hz">
           <div class="k">On the table</div>
@@ -124,12 +152,12 @@
         </div>
         <div class="spec cy">
           <div class="k">Last match</div>
-          <div class="v">Ep. 03</div>
-          <div class="d">Hive Dynamics vs Wndrtech · SnapBackWiz</div>
+          <div class="v">Ep. 05</div>
+          <div class="d">Synthetix vs Nexus · Canada Will</div>
         </div>
         <div class="spec">
           <div class="k">In the archive</div>
-          <div class="v">39 packs</div>
+          <div class="v">92 packs</div>
           <div class="d">Genesis Unlimited openings, pack by pack</div>
         </div>
       </div>
@@ -180,10 +208,10 @@
         </a>
 
         <a class="card cy" href="https://www.youtube.com/playlist?list=PLNaF8h_Wo--k" target="_blank" rel="noopener">
-          <div class="top"><span class="id">SR-02</span><span class="count">04 files</span></div>
+          <div class="top"><span class="id">SR-02</span><span class="count">06 files</span></div>
           <h3>Cyber Showdown</h3>
           <p>Guest matches, filmed. The game as it happened, not a recap over a decklist.</p>
-          <div class="latest">Latest <b>Ep.3 · Hive vs Wndrtech</b></div>
+          <div class="latest">Latest <b>Ep.5 · Synthetix vs Nexus</b></div>
           <span class="go">Open the playlist &gt;&gt;&gt;</span>
         </a>
 
@@ -196,10 +224,10 @@
         </a>
 
         <a class="card" href="https://www.youtube.com/playlist?list=PLeITrMF2f0UY" target="_blank" rel="noopener">
-          <div class="top"><span class="id">SR-04</span><span class="count">04 files</span></div>
+          <div class="top"><span class="id">SR-04</span><span class="count">05 files</span></div>
           <h3>Asset<br>Appreciation</h3>
           <p>The weekly wire. What appreciated, what cooled off, from one window to the next.</p>
-          <div class="latest">Latest <b>10/30 – 11/06</b></div>
+          <div class="latest">Latest <b>11/06 – 11/12</b></div>
           <span class="go">Open the playlist &gt;&gt;&gt;</span>
         </a>
 
@@ -212,10 +240,10 @@
         </a>
 
         <a class="card hz" href="https://www.youtube.com/playlist?list=PLGyYSFJhrQBQ" target="_blank" rel="noopener">
-          <div class="top"><span class="id">SR-06</span><span class="count">39 files</span></div>
+          <div class="top"><span class="id">SR-06</span><span class="count">92 files</span></div>
           <h3>Pack Openings</h3>
           <p>Genesis Unlimited, on camera. The long archive behind the newer shows.</p>
-          <div class="latest">Set <b>Genesis Unlimited</b></div>
+          <div class="latest">Latest <b>#86</b></div>
           <span class="go">Open the playlist &gt;&gt;&gt;</span>
         </a>
       </div>
@@ -244,39 +272,39 @@
           </div>
         </a>
 
-        <a class="vid" href="https://www.youtube.com/watch?v=MndaHuZwPF4" target="_blank" rel="noopener">
+        <a class="vid" href="https://www.youtube.com/watch?v=1Seamz-2Jyc" target="_blank" rel="noopener">
           <div class="shot">
-            <img src="https://i.ytimg.com/vi/MndaHuZwPF4/hqdefault.jpg" alt="">
-            <span class="dur">40:13</span>
+            <img src="https://i.ytimg.com/vi/1Seamz-2Jyc/hqdefault.jpg" alt="">
+            <span class="dur">24:13</span>
           </div>
           <div>
             <div class="k">Cyber Showdown</div>
-            <h3>Ep.3 · Hive vs Wndrtech</h3>
-            <div class="d">ft. SnapBackWiz</div>
+            <h3>Ep.5 · Synthetix vs Nexus</h3>
+            <div class="d">ft. Canada Will</div>
           </div>
         </a>
 
-        <a class="vid" href="https://www.youtube.com/watch?v=IhIHChX_lLY" target="_blank" rel="noopener">
+        <a class="vid" href="https://www.youtube.com/watch?v=guJcl7T4hiU" target="_blank" rel="noopener">
           <div class="shot">
-            <img src="https://i.ytimg.com/vi/IhIHChX_lLY/hqdefault.jpg" alt="">
-            <span class="dur">18:27</span>
+            <img src="https://i.ytimg.com/vi/guJcl7T4hiU/hqdefault.jpg" alt="">
+            <span class="dur">2:41</span>
           </div>
           <div>
-            <div class="k">Deep Diver</div>
-            <h3>Ep.4 · Sunk Cost Fallacy</h3>
-            <div class="d">One card, pressed until it gives.</div>
+            <div class="k">Market</div>
+            <h3>Asset Appreciation<br>11/06 – 11/12</h3>
+            <div class="d">What moved this week, and what sat still.</div>
           </div>
         </a>
 
-        <a class="vid" href="https://www.youtube.com/watch?v=pkYQ1AtNgcc" target="_blank" rel="noopener">
+        <a class="vid" href="https://www.youtube.com/watch?v=HJTd7X7yoIY" target="_blank" rel="noopener">
           <div class="shot">
-            <img src="https://i.ytimg.com/vi/pkYQ1AtNgcc/hqdefault.jpg" alt="">
-            <span class="dur">21:06</span>
+            <img src="https://i.ytimg.com/vi/HJTd7X7yoIY/hqdefault.jpg" alt="">
+            <span class="dur">18:28</span>
           </div>
           <div>
             <div class="k">Cyber Showdown</div>
-            <h3>Ep.2 · Gearhead vs Wndrtech</h3>
-            <div class="d">ft. Cotton</div>
+            <h3>Ep.4 · Coyote vs Deepnet</h3>
+            <div class="d">ft. FreshCannedBug</div>
           </div>
         </a>
       </div>
@@ -293,9 +321,9 @@
           <div>
             <div class="lbl" id="gv-label">Promotion · NS-GVW-001</div>
             <h2>Metal card giveaway</h2>
-            <p>One laser-engraved Neuroscape card, winner’s choice. Sponsored by Mystic Hoard. Comment on the video to enter. <b id="gv-when">Opens Nov 17, 4:00 PM MST.</b> No purchase necessary.</p>
+            <p>One laser-engraved Neuroscape card, winner’s choice. Sponsored by Mystic Hoard. Comment on the video to enter. <b id="gv-when">Opens Nov 16, 4:00 PM MST.</b> No purchase necessary.</p>
           </div>
-          <a class="btn" href="nov-17-2026-giveaway/">Official rules <span class="chev">&gt;&gt;&gt;</span></a>
+          <a class="btn" href="nov-16-2026-giveaway/">Official rules <span class="chev">&gt;&gt;&gt;</span></a>
         </div>
       </div>
     </aside>
@@ -324,7 +352,7 @@
       <b>5H4N3</b> · <a href="https://www.youtube.com/@5H4N3_NS" target="_blank" rel="noopener">youtube.com/@5H4N3_NS</a><br>
       Independent Neuroscape channel. Not sponsored, endorsed, or administered by YouTube or Neuroscape.
       Neuroscape™ is a trademark of Neuroscape, LLC.
-      Subscriber count is a snapshot from Nov 9, 2026.
+      Subscriber count is a snapshot from Nov 16, 2026.
     </div>
     <div class="stamp" aria-hidden="true">On air</div>
   </div>
@@ -394,19 +422,19 @@
   var when = document.getElementById('gv-when');
   var label = document.getElementById('gv-label');
   if (!when) return;
-  var opens = Date.parse('2026-11-17T23:00:00Z');
-  var closes = Date.parse('2026-11-24T23:00:00Z');
+  var opens = Date.parse('2026-11-16T23:00:00Z');
+  var closes = Date.parse('2026-11-23T23:00:00Z');
   var now = Date.now();
   if (now < opens) {
     var days = Math.floor((opens - now) / 86400000);
     label.textContent = days > 1 ? ('Opens in ' + days + ' days') : (days === 1 ? 'Opens tomorrow' : 'Opens today');
-    when.textContent = 'Opens Tue, Nov 17, 4:00 PM MST.';
+    when.textContent = 'Opens Mon, Nov 16, 4:00 PM MST.';
   } else if (now < closes) {
     label.textContent = 'Entries open';
-    when.textContent = 'Open now through Nov 24, 3:59 PM MST.';
+    when.textContent = 'Open now through Nov 23, 3:59 PM MST.';
   } else {
     label.textContent = 'Entries closed';
-    when.textContent = 'Closed Nov 24. Winner video on or about Nov 26.';
+    when.textContent = 'Closed Nov 23. Winner video on or about Nov 25.';
   }
 })();
 </script>
