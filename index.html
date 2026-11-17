@@ -114,48 +114,48 @@
           </p>
           <div class="hero-meta">
             <span class="tag ok">281 subscribers</span>
-            <span class="tag">72 videos</span>
+            <span class="tag">73 videos</span>
             <span class="tag hz">6 series</span>
           </div>
           <div class="cta-row">
-            <a class="btn" href="https://www.youtube.com/watch?v=Lpz95qJhZV4" target="_blank" rel="noopener">Latest video <span class="chev">&gt;&gt;&gt;</span></a>
+            <a class="btn" id="cta-latest" href="https://www.youtube.com/watch?v=3JXGyNdaqzI" target="_blank" rel="noopener">Latest video <span class="chev">&gt;&gt;&gt;</span></a>
             <a class="btn ghost" href="https://www.youtube.com/@5H4N3_NS?sub_confirmation=1" target="_blank" rel="noopener">Subscribe <span class="chev">&gt;&gt;&gt;</span></a>
           </div>
         </div>
 
-        <a class="feature" href="https://www.youtube.com/watch?v=Lpz95qJhZV4" target="_blank" rel="noopener">
+        <a class="feature" id="live-feature" href="https://www.youtube.com/watch?v=3JXGyNdaqzI" target="_blank" rel="noopener">
           <div class="shot">
-            <img src="https://i.ytimg.com/vi/Lpz95qJhZV4/hqdefault.jpg" alt="">
+            <img src="https://i.ytimg.com/vi/3JXGyNdaqzI/hqdefault.jpg" alt="">
             <span class="play" aria-hidden="true">
               <svg width="16" height="18" viewBox="0 0 16 18" fill="currentColor"><path d="M0 0v18l16-9z"/></svg>
             </span>
-            <span class="dur">0:38</span>
+            <span class="dur">25:13</span>
           </div>
           <div class="body">
-            <div class="k">Latest file · Packs</div>
-            <h2>Genesis Unlimited<br>#86</h2>
-            <div class="d">Today’s opening, on camera.</div>
+            <div class="k">Latest file · Match</div>
+            <h2>Cyber Showdown<br>Ep.6</h2>
+            <div class="d">Berserker vs Omnis Blood Diamond · Haowl rematch.</div>
           </div>
         </a>
       </div>
 
       <div class="specs" aria-label="Channel at a glance">
-        <div class="spec red">
+        <div class="spec red" data-live-spec="now">
           <div class="k">Now playing</div>
-          <div class="v">Packs</div>
-          <div class="d">Genesis Unlimited · opening #86</div>
+          <div class="v">Match</div>
+          <div class="d">Cyber Showdown · Ep.6</div>
         </div>
-        <div class="spec hz">
+        <div class="spec hz" data-live-spec="deck">
           <div class="k">On the table</div>
           <div class="v">Calligraphy</div>
           <div class="d">Newest deck tech · Coyote build</div>
         </div>
-        <div class="spec cy">
+        <div class="spec cy" data-live-spec="match">
           <div class="k">Last match</div>
-          <div class="v">Ep. 05</div>
-          <div class="d">Synthetix vs Nexus · Canada Will</div>
+          <div class="v">Ep. 06</div>
+          <div class="d">Berserker vs Omnis Blood Diamond · Haowl</div>
         </div>
-        <div class="spec">
+        <div class="spec" data-live-spec="pack">
           <div class="k">In the archive</div>
           <div class="v">92 packs</div>
           <div class="d">Genesis Unlimited openings, pack by pack</div>
@@ -164,7 +164,7 @@
     </div>
   </section>
 
-  <div class="ticker" aria-label="Recent deck techs">
+  <div class="ticker" id="live-ticker" aria-label="Recent deck techs">
     <div class="track">
       <span class="set">
         <a href="https://www.youtube.com/watch?v=pKAOrU061WY" target="_blank" rel="noopener"><span class="dot">//</span> Calligraphy</a>
@@ -199,7 +199,7 @@
       </header>
 
       <div class="series">
-        <a class="card" href="https://www.youtube.com/playlist?list=PLM-vmTqa9sIM" target="_blank" rel="noopener">
+        <a class="card" data-live-series="deck" href="https://www.youtube.com/playlist?list=PLM-vmTqa9sIM" target="_blank" rel="noopener">
           <div class="top"><span class="id">SR-01</span><span class="count">08 files</span></div>
           <h3>Deck Tech</h3>
           <p>A full build, talked through. Lines, swaps, and why the list is the list.</p>
@@ -207,15 +207,15 @@
           <span class="go">Open the playlist &gt;&gt;&gt;</span>
         </a>
 
-        <a class="card cy" href="https://www.youtube.com/playlist?list=PLNaF8h_Wo--k" target="_blank" rel="noopener">
-          <div class="top"><span class="id">SR-02</span><span class="count">06 files</span></div>
+        <a class="card cy" data-live-series="showdown" href="https://www.youtube.com/playlist?list=PLNaF8h_Wo--k" target="_blank" rel="noopener">
+          <div class="top"><span class="id">SR-02</span><span class="count">07 files</span></div>
           <h3>Cyber Showdown</h3>
           <p>Guest matches, filmed. The game as it happened, not a recap over a decklist.</p>
-          <div class="latest">Latest <b>Ep.5 · Synthetix vs Nexus</b></div>
+          <div class="latest">Latest <b>Ep.6 · Berserker vs Omnis Blood Diamond</b></div>
           <span class="go">Open the playlist &gt;&gt;&gt;</span>
         </a>
 
-        <a class="card hz" href="https://www.youtube.com/playlist?list=PLDYcnPDhDsqQ" target="_blank" rel="noopener">
+        <a class="card hz" data-live-series="diver" href="https://www.youtube.com/playlist?list=PLDYcnPDhDsqQ" target="_blank" rel="noopener">
           <div class="top"><span class="id">SR-03</span><span class="count">04 files</span></div>
           <h3>Deep Diver</h3>
           <p>One card, one argument. Loops, traps, and the staples that might not be.</p>
@@ -223,7 +223,7 @@
           <span class="go">Open the playlist &gt;&gt;&gt;</span>
         </a>
 
-        <a class="card" href="https://www.youtube.com/playlist?list=PLeITrMF2f0UY" target="_blank" rel="noopener">
+        <a class="card" data-live-series="market" href="https://www.youtube.com/playlist?list=PLeITrMF2f0UY" target="_blank" rel="noopener">
           <div class="top"><span class="id">SR-04</span><span class="count">05 files</span></div>
           <h3>Asset<br>Appreciation</h3>
           <p>The weekly wire. What appreciated, what cooled off, from one window to the next.</p>
@@ -231,7 +231,7 @@
           <span class="go">Open the playlist &gt;&gt;&gt;</span>
         </a>
 
-        <a class="card cy" href="https://www.youtube.com/playlist?list=PLdrI5I3i0inc" target="_blank" rel="noopener">
+        <a class="card cy" data-live-series="precon" href="https://www.youtube.com/playlist?list=PLdrI5I3i0inc" target="_blank" rel="noopener">
           <div class="top"><span class="id">SR-05</span><span class="count">02 files</span></div>
           <h3>Precon Upgrades</h3>
           <p>Starter decks, opened up. The swaps that change how the precon actually plays.</p>
@@ -239,7 +239,7 @@
           <span class="go">Open the playlist &gt;&gt;&gt;</span>
         </a>
 
-        <a class="card hz" href="https://www.youtube.com/playlist?list=PLGyYSFJhrQBQ" target="_blank" rel="noopener">
+        <a class="card hz" data-live-series="pack" href="https://www.youtube.com/playlist?list=PLGyYSFJhrQBQ" target="_blank" rel="noopener">
           <div class="top"><span class="id">SR-06</span><span class="count">92 files</span></div>
           <h3>Pack Openings</h3>
           <p>Genesis Unlimited, on camera. The long archive behind the newer shows.</p>
@@ -259,7 +259,7 @@
         <span class="code">// on the feed</span>
       </header>
 
-      <div class="files">
+      <div class="files" id="live-files">
         <a class="vid lead" href="https://www.youtube.com/watch?v=pKAOrU061WY" target="_blank" rel="noopener">
           <div class="shot">
             <img src="https://i.ytimg.com/vi/pKAOrU061WY/hqdefault.jpg" alt="">
@@ -272,15 +272,15 @@
           </div>
         </a>
 
-        <a class="vid" href="https://www.youtube.com/watch?v=1Seamz-2Jyc" target="_blank" rel="noopener">
+        <a class="vid" href="https://www.youtube.com/watch?v=3JXGyNdaqzI" target="_blank" rel="noopener">
           <div class="shot">
-            <img src="https://i.ytimg.com/vi/1Seamz-2Jyc/hqdefault.jpg" alt="">
-            <span class="dur">24:13</span>
+            <img src="https://i.ytimg.com/vi/3JXGyNdaqzI/hqdefault.jpg" alt="">
+            <span class="dur">25:13</span>
           </div>
           <div>
             <div class="k">Cyber Showdown</div>
-            <h3>Ep.5 · Synthetix vs Nexus</h3>
-            <div class="d">ft. Canada Will</div>
+            <h3>Ep.6 · Berserker vs Omnis</h3>
+            <div class="d">ft. Haowl · rematch</div>
           </div>
         </a>
 
@@ -436,6 +436,109 @@
     label.textContent = 'Entries closed';
     when.textContent = 'Closed Nov 23. Winner video on or about Nov 25.';
   }
+})();
+</script>
+<script>
+/* Daily YouTube feed. data/videos.json is written at 4:05 PM MST by the
+   GitHub Action. The markup above stays if that file cannot be read. */
+(function(){
+  function esc(s){
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
+    });
+  }
+  function setSpec(name, value, detail){
+    var box = document.querySelector('[data-live-spec="' + name + '"]');
+    if (!box) return;
+    var v = box.querySelector('.v'), d = box.querySelector('.d');
+    if (v) v.textContent = value;
+    if (d) d.textContent = detail;
+  }
+  var known = {};
+  document.querySelectorAll('a.feature, a.vid').forEach(function(a){
+    var m = (a.getAttribute('href') || '').match(/[?&]v=([A-Za-z0-9_-]{11})/);
+    var dur = a.querySelector('.dur');
+    if (m && dur && /^\d+:\d+/.test(dur.textContent.trim())) known[m[1]] = dur.textContent.trim();
+  });
+  function badge(video){
+    return known[video.id] || video.when;
+  }
+  function paintSeries(kind, video){
+    if (!video || kind === 'upload' || kind === 'news') return;
+    var card = document.querySelector('[data-live-series="' + kind + '"]');
+    if (card) {
+      var latest = card.querySelector('.latest b');
+      if (latest) latest.textContent = video.view.line;
+    }
+    if (kind === 'deck') setSpec('deck', video.view.specValue, video.view.specDetail);
+    if (kind === 'showdown') setSpec('match', video.view.specValue, video.view.specDetail);
+  }
+  function feature(video){
+    var card = document.getElementById('live-feature');
+    var btn = document.getElementById('cta-latest');
+    if (!card || !video) return;
+    card.href = video.url;
+    if (btn) btn.href = video.url;
+    var img = card.querySelector('img');
+    if (img) img.src = video.thumb;
+    var dur = card.querySelector('.dur');
+    if (dur) dur.textContent = badge(video);
+    var k = card.querySelector('.k');
+    if (k) k.textContent = 'Latest file · ' + video.view.kicker;
+    var h = card.querySelector('h2');
+    if (h) h.innerHTML = esc(video.view.heading) + '<br>' + esc(video.view.subhead);
+    var d = card.querySelector('.d');
+    if (d) d.textContent = video.view.detail || video.view.line;
+    setSpec('now', video.view.kicker, video.view.heading + ' · ' + video.view.subhead);
+  }
+  function recent(videos){
+    var box = document.getElementById('live-files');
+    if (!box || !videos || videos.length < 4) return;
+    box.innerHTML = videos.slice(0, 4).map(function(video, i){
+      var lead = i === 0;
+      var h3 = lead
+        ? esc(video.view.heading) + '<br>' + esc(video.view.subhead)
+        : esc(video.view.line);
+      return '<a class="vid' + (lead ? ' lead' : '') + '" href="' + esc(video.url) + '" target="_blank" rel="noopener">' +
+        '<div class="shot"><img src="' + esc(video.thumb) + '" alt="">' +
+        '<span class="dur">' + esc(badge(video)) + '</span></div>' +
+        '<div' + (lead ? ' class="pad"' : '') + '>' +
+        '<div class="k">' + esc(video.view.kicker) + '</div>' +
+        '<h3>' + h3 + '</h3>' +
+        '<div class="d">' + esc(video.view.detail || '') + '</div></div></a>';
+    }).join('');
+  }
+  function ticker(videos){
+    var root = document.getElementById('live-ticker');
+    if (!root || !videos || !videos.length) return;
+    var track = root.querySelector('.track');
+    if (!track) return;
+    function set(hidden){
+      return '<span class="set' + (hidden ? ' dup' : '') + '"' + (hidden ? ' aria-hidden="true"' : '') + '>' +
+        videos.map(function(video){
+          return '<a href="' + esc(video.url) + '" target="_blank" rel="noopener"' + (hidden ? ' tabindex="-1"' : '') + '><span class="dot">//</span> ' + esc(video.view.line) + '</a>';
+        }).join('') + '</span>';
+    }
+    track.innerHTML = set(false) + set(true);
+  }
+
+  fetch('data/videos.json', { cache: 'no-store' }).then(function(r){
+    if (!r.ok) throw new Error('feed');
+    return r.json();
+  }).then(function(data){
+    if (!data) return;
+    var channel = data.channel;
+    if (channel && channel.length) {
+      feature(channel[0]);
+      recent(channel);
+    }
+    ['deck', 'showdown', 'diver', 'market', 'precon', 'pack'].forEach(function(key){
+      var videos = data[key];
+      if (!videos || !videos.length) return;
+      paintSeries(key, videos[0]);
+      if (key === 'deck') ticker(videos);
+    });
+  }).catch(function(){});
 })();
 </script>
 </body>

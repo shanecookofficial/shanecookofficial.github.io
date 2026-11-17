@@ -1,0 +1,35 @@
+name: YouTube feed
+
+on:
+  schedule:
+    # 4:05 PM MST (UTC-7). GitHub may start the run a few minutes after the hour.
+    - cron: "5 23 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: youtube-feed
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch YouTube feeds
+        run: python3 scripts/fetch-youtube.py
+
+      - name: Commit feed
+        run: |
+          git add data/videos.json
+          if git diff --staged --quiet; then
+            echo "Feed unchanged."
+            exit 0
+          fi
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "Update the homepage video feed."
+          git push
