@@ -1,6 +1,38 @@
 {
   "channel": [
     {
+      "id": "6f1CenDkNWA",
+      "url": "https://www.youtube.com/watch?v=6f1CenDkNWA",
+      "thumb": "https://i.ytimg.com/vi/6f1CenDkNWA/hqdefault.jpg",
+      "when": "Nov 17",
+      "kind": "diver",
+      "view": {
+        "kicker": "Deep Diver",
+        "heading": "Deep Diver",
+        "subhead": "Ep.5",
+        "detail": "How to get better at Neuroscape",
+        "line": "Ep.5 · How to get better at Neuroscape",
+        "specValue": "Ep. 05",
+        "specDetail": "How to get better at Neuroscape"
+      }
+    },
+    {
+      "id": "2gZbdH5DyS4",
+      "url": "https://www.youtube.com/watch?v=2gZbdH5DyS4",
+      "thumb": "https://i.ytimg.com/vi/2gZbdH5DyS4/hqdefault.jpg",
+      "when": "Nov 17",
+      "kind": "pack",
+      "view": {
+        "kicker": "Packs",
+        "heading": "Genesis Unlimited",
+        "subhead": "#87",
+        "detail": "Opening on camera.",
+        "line": "#87",
+        "specValue": "#87",
+        "specDetail": "Genesis Unlimited opening"
+      }
+    },
+    {
       "id": "3JXGyNdaqzI",
       "url": "https://www.youtube.com/watch?v=3JXGyNdaqzI",
       "thumb": "https://i.ytimg.com/vi/3JXGyNdaqzI/hqdefault.jpg",
@@ -205,38 +237,6 @@
         "detail": "Opening on camera.",
         "line": "#79",
         "specValue": "#79",
-        "specDetail": "Genesis Unlimited opening"
-      }
-    },
-    {
-      "id": "IsIZzZVtw6s",
-      "url": "https://www.youtube.com/watch?v=IsIZzZVtw6s",
-      "thumb": "https://i.ytimg.com/vi/IsIZzZVtw6s/hqdefault.jpg",
-      "when": "Nov 8",
-      "kind": "pack",
-      "view": {
-        "kicker": "Packs",
-        "heading": "Genesis Unlimited",
-        "subhead": "#78",
-        "detail": "Opening on camera.",
-        "line": "#78",
-        "specValue": "#78",
-        "specDetail": "Genesis Unlimited opening"
-      }
-    },
-    {
-      "id": "cb1ULfBHmwc",
-      "url": "https://www.youtube.com/watch?v=cb1ULfBHmwc",
-      "thumb": "https://i.ytimg.com/vi/cb1ULfBHmwc/hqdefault.jpg",
-      "when": "Nov 7",
-      "kind": "pack",
-      "view": {
-        "kicker": "Packs",
-        "heading": "Genesis Unlimited",
-        "subhead": "#77",
-        "detail": "Opening on camera.",
-        "line": "#77",
-        "specValue": "#77",
         "specDetail": "Genesis Unlimited opening"
       }
     }
@@ -455,6 +455,22 @@
   ],
   "diver": [
     {
+      "id": "6f1CenDkNWA",
+      "url": "https://www.youtube.com/watch?v=6f1CenDkNWA",
+      "thumb": "https://i.ytimg.com/vi/6f1CenDkNWA/hqdefault.jpg",
+      "when": "Nov 17",
+      "kind": "diver",
+      "view": {
+        "kicker": "Deep Diver",
+        "heading": "Deep Diver",
+        "subhead": "Ep.5",
+        "detail": "How to get better at Neuroscape",
+        "line": "Ep.5 · How to get better at Neuroscape",
+        "specValue": "Ep. 05",
+        "specDetail": "How to get better at Neuroscape"
+      }
+    },
+    {
       "id": "IhIHChX_lLY",
       "url": "https://www.youtube.com/watch?v=IhIHChX_lLY",
       "thumb": "https://i.ytimg.com/vi/IhIHChX_lLY/hqdefault.jpg",
@@ -620,6 +636,22 @@
     }
   ],
   "pack": [
+    {
+      "id": "2gZbdH5DyS4",
+      "url": "https://www.youtube.com/watch?v=2gZbdH5DyS4",
+      "thumb": "https://i.ytimg.com/vi/2gZbdH5DyS4/hqdefault.jpg",
+      "when": "Nov 17",
+      "kind": "pack",
+      "view": {
+        "kicker": "Packs",
+        "heading": "Genesis Unlimited",
+        "subhead": "#87",
+        "detail": "Opening on camera.",
+        "line": "#87",
+        "specValue": "#87",
+        "specDetail": "Genesis Unlimited opening"
+      }
+    },
     {
       "id": "Lpz95qJhZV4",
       "url": "https://www.youtube.com/watch?v=Lpz95qJhZV4",
@@ -841,22 +873,6 @@
         "detail": "Opening on camera.",
         "line": "#73",
         "specValue": "#73",
-        "specDetail": "Genesis Unlimited opening"
-      }
-    },
-    {
-      "id": "q5W4VhzlVgE",
-      "url": "https://www.youtube.com/watch?v=q5W4VhzlVgE",
-      "thumb": "https://i.ytimg.com/vi/q5W4VhzlVgE/hqdefault.jpg",
-      "when": "Nov 2",
-      "kind": "pack",
-      "view": {
-        "kicker": "Packs",
-        "heading": "Genesis Unlimited",
-        "subhead": "#72",
-        "detail": "Opening on camera.",
-        "line": "#72",
-        "specValue": "#72",
         "specDetail": "Genesis Unlimited opening"
       }
     }
