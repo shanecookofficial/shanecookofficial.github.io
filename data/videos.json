@@ -1,6 +1,38 @@
 {
   "channel": [
     {
+      "id": "hL1J5H2z6KM",
+      "url": "https://www.youtube.com/watch?v=hL1J5H2z6KM",
+      "thumb": "https://i.ytimg.com/vi/hL1J5H2z6KM/hqdefault.jpg",
+      "when": "Nov 18",
+      "kind": "showdown",
+      "view": {
+        "kicker": "Match",
+        "heading": "Cyber Showdown",
+        "subhead": "Ep.7",
+        "detail": "Headbanger vs Aethernet · Valentyne from ACU-FM",
+        "line": "Ep.7 · Headbanger vs Aethernet",
+        "specValue": "Ep. 07",
+        "specDetail": "Headbanger vs Aethernet · Valentyne from ACU-FM"
+      }
+    },
+    {
+      "id": "EusYOBBUMN8",
+      "url": "https://www.youtube.com/watch?v=EusYOBBUMN8",
+      "thumb": "https://i.ytimg.com/vi/EusYOBBUMN8/hqdefault.jpg",
+      "when": "Nov 18",
+      "kind": "pack",
+      "view": {
+        "kicker": "Packs",
+        "heading": "Genesis Unlimited",
+        "subhead": "#88",
+        "detail": "Opening on camera.",
+        "line": "#88",
+        "specValue": "#88",
+        "specDetail": "Genesis Unlimited opening"
+      }
+    },
+    {
       "id": "6f1CenDkNWA",
       "url": "https://www.youtube.com/watch?v=6f1CenDkNWA",
       "thumb": "https://i.ytimg.com/vi/6f1CenDkNWA/hqdefault.jpg",
@@ -207,38 +239,6 @@
         "specValue": "#80",
         "specDetail": "Genesis Unlimited opening"
       }
-    },
-    {
-      "id": "HJTd7X7yoIY",
-      "url": "https://www.youtube.com/watch?v=HJTd7X7yoIY",
-      "thumb": "https://i.ytimg.com/vi/HJTd7X7yoIY/hqdefault.jpg",
-      "when": "Nov 9",
-      "kind": "showdown",
-      "view": {
-        "kicker": "Match",
-        "heading": "Cyber Showdown",
-        "subhead": "Ep.4",
-        "detail": "Coyote vs Deepnet · FreshCannedBug",
-        "line": "Ep.4 · Coyote vs Deepnet",
-        "specValue": "Ep. 04",
-        "specDetail": "Coyote vs Deepnet · FreshCannedBug"
-      }
-    },
-    {
-      "id": "Q6EWuh0nl-8",
-      "url": "https://www.youtube.com/watch?v=Q6EWuh0nl-8",
-      "thumb": "https://i.ytimg.com/vi/Q6EWuh0nl-8/hqdefault.jpg",
-      "when": "Nov 9",
-      "kind": "pack",
-      "view": {
-        "kicker": "Packs",
-        "heading": "Genesis Unlimited",
-        "subhead": "#79",
-        "detail": "Opening on camera.",
-        "line": "#79",
-        "specValue": "#79",
-        "specDetail": "Genesis Unlimited opening"
-      }
     }
   ],
   "deck": [
@@ -372,6 +372,22 @@
     }
   ],
   "showdown": [
+    {
+      "id": "hL1J5H2z6KM",
+      "url": "https://www.youtube.com/watch?v=hL1J5H2z6KM",
+      "thumb": "https://i.ytimg.com/vi/hL1J5H2z6KM/hqdefault.jpg",
+      "when": "Nov 18",
+      "kind": "showdown",
+      "view": {
+        "kicker": "Match",
+        "heading": "Cyber Showdown",
+        "subhead": "Ep.7",
+        "detail": "Headbanger vs Aethernet · Valentyne from ACU-FM",
+        "line": "Ep.7 · Headbanger vs Aethernet",
+        "specValue": "Ep. 07",
+        "specDetail": "Headbanger vs Aethernet · Valentyne from ACU-FM"
+      }
+    },
     {
       "id": "3JXGyNdaqzI",
       "url": "https://www.youtube.com/watch?v=3JXGyNdaqzI",
@@ -637,6 +653,22 @@
   ],
   "pack": [
     {
+      "id": "EusYOBBUMN8",
+      "url": "https://www.youtube.com/watch?v=EusYOBBUMN8",
+      "thumb": "https://i.ytimg.com/vi/EusYOBBUMN8/hqdefault.jpg",
+      "when": "Nov 18",
+      "kind": "pack",
+      "view": {
+        "kicker": "Packs",
+        "heading": "Genesis Unlimited",
+        "subhead": "#88",
+        "detail": "Opening on camera.",
+        "line": "#88",
+        "specValue": "#88",
+        "specDetail": "Genesis Unlimited opening"
+      }
+    },
+    {
       "id": "2gZbdH5DyS4",
       "url": "https://www.youtube.com/watch?v=2gZbdH5DyS4",
       "thumb": "https://i.ytimg.com/vi/2gZbdH5DyS4/hqdefault.jpg",
@@ -857,22 +889,6 @@
         "detail": "Opening on camera.",
         "line": "#74",
         "specValue": "#74",
-        "specDetail": "Genesis Unlimited opening"
-      }
-    },
-    {
-      "id": "GbYEmzPDAeA",
-      "url": "https://www.youtube.com/watch?v=GbYEmzPDAeA",
-      "thumb": "https://i.ytimg.com/vi/GbYEmzPDAeA/hqdefault.jpg",
-      "when": "Nov 3",
-      "kind": "pack",
-      "view": {
-        "kicker": "Packs",
-        "heading": "Genesis Unlimited",
-        "subhead": "#73",
-        "detail": "Opening on camera.",
-        "line": "#73",
-        "specValue": "#73",
         "specDetail": "Genesis Unlimited opening"
       }
     }
