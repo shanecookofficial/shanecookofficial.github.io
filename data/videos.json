@@ -1,6 +1,38 @@
 {
   "channel": [
     {
+      "id": "6Q-1KPkd_YE",
+      "url": "https://www.youtube.com/watch?v=6Q-1KPkd_YE",
+      "thumb": "https://i.ytimg.com/vi/6Q-1KPkd_YE/hqdefault.jpg",
+      "when": "Nov 19",
+      "kind": "deck",
+      "view": {
+        "kicker": "Deck tech",
+        "heading": "Deck Tech",
+        "subhead": "Omnis “Good Stuff”",
+        "detail": "Full walkthrough.",
+        "line": "Omnis “Good Stuff”",
+        "specValue": "Omnis “Good Stuff”",
+        "specDetail": "Newest deck tech"
+      }
+    },
+    {
+      "id": "ceR61yoDLvg",
+      "url": "https://www.youtube.com/watch?v=ceR61yoDLvg",
+      "thumb": "https://i.ytimg.com/vi/ceR61yoDLvg/hqdefault.jpg",
+      "when": "Nov 19",
+      "kind": "pack",
+      "view": {
+        "kicker": "Packs",
+        "heading": "Genesis Unlimited",
+        "subhead": "#89",
+        "detail": "Opening on camera.",
+        "line": "#89",
+        "specValue": "#89",
+        "specDetail": "Genesis Unlimited opening"
+      }
+    },
+    {
       "id": "hL1J5H2z6KM",
       "url": "https://www.youtube.com/watch?v=hL1J5H2z6KM",
       "thumb": "https://i.ytimg.com/vi/hL1J5H2z6KM/hqdefault.jpg",
@@ -207,41 +239,25 @@
         "specValue": "Ep. 05",
         "specDetail": "Synthetix vs Nexus · Canada Will"
       }
-    },
-    {
-      "id": "IHYHqZcNTDo",
-      "url": "https://www.youtube.com/watch?v=IHYHqZcNTDo",
-      "thumb": "https://i.ytimg.com/vi/IHYHqZcNTDo/hqdefault.jpg",
-      "when": "Nov 11",
-      "kind": "pack",
-      "view": {
-        "kicker": "Packs",
-        "heading": "Genesis Unlimited",
-        "subhead": "#81",
-        "detail": "Opening on camera.",
-        "line": "#81",
-        "specValue": "#81",
-        "specDetail": "Genesis Unlimited opening"
-      }
-    },
-    {
-      "id": "A0D2Kz5nMNE",
-      "url": "https://www.youtube.com/watch?v=A0D2Kz5nMNE",
-      "thumb": "https://i.ytimg.com/vi/A0D2Kz5nMNE/hqdefault.jpg",
-      "when": "Nov 10",
-      "kind": "pack",
-      "view": {
-        "kicker": "Packs",
-        "heading": "Genesis Unlimited",
-        "subhead": "#80",
-        "detail": "Opening on camera.",
-        "line": "#80",
-        "specValue": "#80",
-        "specDetail": "Genesis Unlimited opening"
-      }
     }
   ],
   "deck": [
+    {
+      "id": "6Q-1KPkd_YE",
+      "url": "https://www.youtube.com/watch?v=6Q-1KPkd_YE",
+      "thumb": "https://i.ytimg.com/vi/6Q-1KPkd_YE/hqdefault.jpg",
+      "when": "Nov 19",
+      "kind": "deck",
+      "view": {
+        "kicker": "Deck tech",
+        "heading": "Deck Tech",
+        "subhead": "Omnis “Good Stuff”",
+        "detail": "Full walkthrough.",
+        "line": "Omnis “Good Stuff”",
+        "specValue": "Omnis “Good Stuff”",
+        "specDetail": "Newest deck tech"
+      }
+    },
     {
       "id": "pKAOrU061WY",
       "url": "https://www.youtube.com/watch?v=pKAOrU061WY",
@@ -653,6 +669,22 @@
   ],
   "pack": [
     {
+      "id": "ceR61yoDLvg",
+      "url": "https://www.youtube.com/watch?v=ceR61yoDLvg",
+      "thumb": "https://i.ytimg.com/vi/ceR61yoDLvg/hqdefault.jpg",
+      "when": "Nov 19",
+      "kind": "pack",
+      "view": {
+        "kicker": "Packs",
+        "heading": "Genesis Unlimited",
+        "subhead": "#89",
+        "detail": "Opening on camera.",
+        "line": "#89",
+        "specValue": "#89",
+        "specDetail": "Genesis Unlimited opening"
+      }
+    },
+    {
       "id": "EusYOBBUMN8",
       "url": "https://www.youtube.com/watch?v=EusYOBBUMN8",
       "thumb": "https://i.ytimg.com/vi/EusYOBBUMN8/hqdefault.jpg",
@@ -873,22 +905,6 @@
         "detail": "Opening on camera.",
         "line": "#75",
         "specValue": "#75",
-        "specDetail": "Genesis Unlimited opening"
-      }
-    },
-    {
-      "id": "gub165ws4tQ",
-      "url": "https://www.youtube.com/watch?v=gub165ws4tQ",
-      "thumb": "https://i.ytimg.com/vi/gub165ws4tQ/hqdefault.jpg",
-      "when": "Nov 4",
-      "kind": "pack",
-      "view": {
-        "kicker": "Packs",
-        "heading": "Genesis Unlimited",
-        "subhead": "#74",
-        "detail": "Opening on camera.",
-        "line": "#74",
-        "specValue": "#74",
         "specDetail": "Genesis Unlimited opening"
       }
     }
