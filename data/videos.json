@@ -1,6 +1,38 @@
 {
   "channel": [
     {
+      "id": "f4uUhmLB6O0",
+      "url": "https://www.youtube.com/watch?v=f4uUhmLB6O0",
+      "thumb": "https://i.ytimg.com/vi/f4uUhmLB6O0/hqdefault.jpg",
+      "when": "Nov 20",
+      "kind": "market",
+      "view": {
+        "kicker": "Market",
+        "heading": "Asset Appreciation",
+        "subhead": "11/13 – 11/19",
+        "detail": "What moved this week, and what sat still.",
+        "line": "11/13 – 11/19",
+        "specValue": "11/13 – 11/19",
+        "specDetail": "Weekly price report"
+      }
+    },
+    {
+      "id": "pYuUN2SMaH4",
+      "url": "https://www.youtube.com/watch?v=pYuUN2SMaH4",
+      "thumb": "https://i.ytimg.com/vi/pYuUN2SMaH4/hqdefault.jpg",
+      "when": "Nov 20",
+      "kind": "pack",
+      "view": {
+        "kicker": "Packs",
+        "heading": "Genesis Unlimited",
+        "subhead": "#90",
+        "detail": "Opening on camera.",
+        "line": "#90",
+        "specValue": "#90",
+        "specDetail": "Genesis Unlimited opening"
+      }
+    },
+    {
       "id": "6Q-1KPkd_YE",
       "url": "https://www.youtube.com/watch?v=6Q-1KPkd_YE",
       "thumb": "https://i.ytimg.com/vi/6Q-1KPkd_YE/hqdefault.jpg",
@@ -206,38 +238,6 @@
         "line": "#83",
         "specValue": "#83",
         "specDetail": "Genesis Unlimited opening"
-      }
-    },
-    {
-      "id": "l6T3RKjCxUs",
-      "url": "https://www.youtube.com/watch?v=l6T3RKjCxUs",
-      "thumb": "https://i.ytimg.com/vi/l6T3RKjCxUs/hqdefault.jpg",
-      "when": "Nov 12",
-      "kind": "pack",
-      "view": {
-        "kicker": "Packs",
-        "heading": "Genesis Unlimited",
-        "subhead": "#82",
-        "detail": "Opening on camera.",
-        "line": "#82",
-        "specValue": "#82",
-        "specDetail": "Genesis Unlimited opening"
-      }
-    },
-    {
-      "id": "1Seamz-2Jyc",
-      "url": "https://www.youtube.com/watch?v=1Seamz-2Jyc",
-      "thumb": "https://i.ytimg.com/vi/1Seamz-2Jyc/hqdefault.jpg",
-      "when": "Nov 11",
-      "kind": "showdown",
-      "view": {
-        "kicker": "Match",
-        "heading": "Cyber Showdown",
-        "subhead": "Ep.5",
-        "detail": "Synthetix vs Nexus · Canada Will",
-        "line": "Ep.5 · Synthetix vs Nexus",
-        "specValue": "Ep. 05",
-        "specDetail": "Synthetix vs Nexus · Canada Will"
       }
     }
   ],
@@ -569,6 +569,22 @@
   ],
   "market": [
     {
+      "id": "f4uUhmLB6O0",
+      "url": "https://www.youtube.com/watch?v=f4uUhmLB6O0",
+      "thumb": "https://i.ytimg.com/vi/f4uUhmLB6O0/hqdefault.jpg",
+      "when": "Nov 20",
+      "kind": "market",
+      "view": {
+        "kicker": "Market",
+        "heading": "Asset Appreciation",
+        "subhead": "11/13 – 11/19",
+        "detail": "What moved this week, and what sat still.",
+        "line": "11/13 – 11/19",
+        "specValue": "11/13 – 11/19",
+        "specDetail": "Weekly price report"
+      }
+    },
+    {
       "id": "guJcl7T4hiU",
       "url": "https://www.youtube.com/watch?v=guJcl7T4hiU",
       "thumb": "https://i.ytimg.com/vi/guJcl7T4hiU/hqdefault.jpg",
@@ -668,6 +684,22 @@
     }
   ],
   "pack": [
+    {
+      "id": "pYuUN2SMaH4",
+      "url": "https://www.youtube.com/watch?v=pYuUN2SMaH4",
+      "thumb": "https://i.ytimg.com/vi/pYuUN2SMaH4/hqdefault.jpg",
+      "when": "Nov 20",
+      "kind": "pack",
+      "view": {
+        "kicker": "Packs",
+        "heading": "Genesis Unlimited",
+        "subhead": "#90",
+        "detail": "Opening on camera.",
+        "line": "#90",
+        "specValue": "#90",
+        "specDetail": "Genesis Unlimited opening"
+      }
+    },
     {
       "id": "ceR61yoDLvg",
       "url": "https://www.youtube.com/watch?v=ceR61yoDLvg",
@@ -889,22 +921,6 @@
         "detail": "Opening on camera.",
         "line": "#76",
         "specValue": "#76",
-        "specDetail": "Genesis Unlimited opening"
-      }
-    },
-    {
-      "id": "69nW_O1FCsE",
-      "url": "https://www.youtube.com/watch?v=69nW_O1FCsE",
-      "thumb": "https://i.ytimg.com/vi/69nW_O1FCsE/hqdefault.jpg",
-      "when": "Nov 5",
-      "kind": "pack",
-      "view": {
-        "kicker": "Packs",
-        "heading": "Genesis Unlimited",
-        "subhead": "#75",
-        "detail": "Opening on camera.",
-        "line": "#75",
-        "specValue": "#75",
         "specDetail": "Genesis Unlimited opening"
       }
     }
