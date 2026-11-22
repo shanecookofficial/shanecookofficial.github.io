@@ -1,6 +1,22 @@
 {
   "channel": [
     {
+      "id": "teiRbAdtwAg",
+      "url": "https://www.youtube.com/watch?v=teiRbAdtwAg",
+      "thumb": "https://i.ytimg.com/vi/teiRbAdtwAg/hqdefault.jpg",
+      "when": "Nov 21",
+      "kind": "pack",
+      "view": {
+        "kicker": "Packs",
+        "heading": "Genesis Unlimited",
+        "subhead": "#91",
+        "detail": "Opening on camera.",
+        "line": "#91",
+        "specValue": "#91",
+        "specDetail": "Genesis Unlimited opening"
+      }
+    },
+    {
       "id": "f4uUhmLB6O0",
       "url": "https://www.youtube.com/watch?v=f4uUhmLB6O0",
       "thumb": "https://i.ytimg.com/vi/f4uUhmLB6O0/hqdefault.jpg",
@@ -222,22 +238,6 @@
         "line": "GOD PACKS?! SERIALIZED LUG NUT??!",
         "specValue": "News",
         "specDetail": "GOD PACKS?! SERIALIZED LUG NUT??!"
-      }
-    },
-    {
-      "id": "RdHiGosvMEY",
-      "url": "https://www.youtube.com/watch?v=RdHiGosvMEY",
-      "thumb": "https://i.ytimg.com/vi/RdHiGosvMEY/hqdefault.jpg",
-      "when": "Nov 13",
-      "kind": "pack",
-      "view": {
-        "kicker": "Packs",
-        "heading": "Genesis Unlimited",
-        "subhead": "#83",
-        "detail": "Opening on camera.",
-        "line": "#83",
-        "specValue": "#83",
-        "specDetail": "Genesis Unlimited opening"
       }
     }
   ],
@@ -685,6 +685,22 @@
   ],
   "pack": [
     {
+      "id": "teiRbAdtwAg",
+      "url": "https://www.youtube.com/watch?v=teiRbAdtwAg",
+      "thumb": "https://i.ytimg.com/vi/teiRbAdtwAg/hqdefault.jpg",
+      "when": "Nov 21",
+      "kind": "pack",
+      "view": {
+        "kicker": "Packs",
+        "heading": "Genesis Unlimited",
+        "subhead": "#91",
+        "detail": "Opening on camera.",
+        "line": "#91",
+        "specValue": "#91",
+        "specDetail": "Genesis Unlimited opening"
+      }
+    },
+    {
       "id": "pYuUN2SMaH4",
       "url": "https://www.youtube.com/watch?v=pYuUN2SMaH4",
       "thumb": "https://i.ytimg.com/vi/pYuUN2SMaH4/hqdefault.jpg",
@@ -905,22 +921,6 @@
         "detail": "Opening on camera.",
         "line": "#77",
         "specValue": "#77",
-        "specDetail": "Genesis Unlimited opening"
-      }
-    },
-    {
-      "id": "6vLOA3ix1O8",
-      "url": "https://www.youtube.com/watch?v=6vLOA3ix1O8",
-      "thumb": "https://i.ytimg.com/vi/6vLOA3ix1O8/hqdefault.jpg",
-      "when": "Nov 6",
-      "kind": "pack",
-      "view": {
-        "kicker": "Packs",
-        "heading": "Genesis Unlimited",
-        "subhead": "#76",
-        "detail": "Opening on camera.",
-        "line": "#76",
-        "specValue": "#76",
         "specDetail": "Genesis Unlimited opening"
       }
     }
