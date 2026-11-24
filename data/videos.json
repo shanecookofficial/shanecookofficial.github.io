@@ -1,6 +1,22 @@
 {
   "channel": [
     {
+      "id": "z-wkvIJmgbI",
+      "url": "https://www.youtube.com/watch?v=z-wkvIJmgbI",
+      "thumb": "https://i.ytimg.com/vi/z-wkvIJmgbI/hqdefault.jpg",
+      "when": "Nov 23",
+      "kind": "pack",
+      "view": {
+        "kicker": "Packs",
+        "heading": "Genesis Unlimited",
+        "subhead": "#93",
+        "detail": "Opening on camera.",
+        "line": "#93",
+        "specValue": "#93",
+        "specDetail": "Genesis Unlimited opening"
+      }
+    },
+    {
       "id": "QpixPMepxjI",
       "url": "https://www.youtube.com/watch?v=QpixPMepxjI",
       "thumb": "https://i.ytimg.com/vi/QpixPMepxjI/hqdefault.jpg",
@@ -222,22 +238,6 @@
         "line": "#84",
         "specValue": "#84",
         "specDetail": "Genesis Unlimited opening"
-      }
-    },
-    {
-      "id": "guJcl7T4hiU",
-      "url": "https://www.youtube.com/watch?v=guJcl7T4hiU",
-      "thumb": "https://i.ytimg.com/vi/guJcl7T4hiU/hqdefault.jpg",
-      "when": "Nov 13",
-      "kind": "market",
-      "view": {
-        "kicker": "Market",
-        "heading": "Asset Appreciation",
-        "subhead": "11/06 – 11/12",
-        "detail": "What moved this week, and what sat still.",
-        "line": "11/06 – 11/12",
-        "specValue": "11/06 – 11/12",
-        "specDetail": "Weekly price report"
       }
     }
   ],
@@ -685,6 +685,22 @@
   ],
   "pack": [
     {
+      "id": "z-wkvIJmgbI",
+      "url": "https://www.youtube.com/watch?v=z-wkvIJmgbI",
+      "thumb": "https://i.ytimg.com/vi/z-wkvIJmgbI/hqdefault.jpg",
+      "when": "Nov 23",
+      "kind": "pack",
+      "view": {
+        "kicker": "Packs",
+        "heading": "Genesis Unlimited",
+        "subhead": "#93",
+        "detail": "Opening on camera.",
+        "line": "#93",
+        "specValue": "#93",
+        "specDetail": "Genesis Unlimited opening"
+      }
+    },
+    {
       "id": "QpixPMepxjI",
       "url": "https://www.youtube.com/watch?v=QpixPMepxjI",
       "thumb": "https://i.ytimg.com/vi/QpixPMepxjI/hqdefault.jpg",
@@ -905,22 +921,6 @@
         "detail": "Opening on camera.",
         "line": "#79",
         "specValue": "#79",
-        "specDetail": "Genesis Unlimited opening"
-      }
-    },
-    {
-      "id": "IsIZzZVtw6s",
-      "url": "https://www.youtube.com/watch?v=IsIZzZVtw6s",
-      "thumb": "https://i.ytimg.com/vi/IsIZzZVtw6s/hqdefault.jpg",
-      "when": "Nov 8",
-      "kind": "pack",
-      "view": {
-        "kicker": "Packs",
-        "heading": "Genesis Unlimited",
-        "subhead": "#78",
-        "detail": "Opening on camera.",
-        "line": "#78",
-        "specValue": "#78",
         "specDetail": "Genesis Unlimited opening"
       }
     }
