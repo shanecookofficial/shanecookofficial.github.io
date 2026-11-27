@@ -1,6 +1,38 @@
 {
   "channel": [
     {
+      "id": "eeSgi4iccU4",
+      "url": "https://www.youtube.com/watch?v=eeSgi4iccU4",
+      "thumb": "https://i.ytimg.com/vi/eeSgi4iccU4/hqdefault.jpg",
+      "when": "Nov 26",
+      "kind": "upload",
+      "view": {
+        "kicker": "Latest",
+        "heading": "New upload",
+        "subhead": "Mystic Hoard Giveaway Announcement!",
+        "detail": "",
+        "line": "Mystic Hoard Giveaway Announcement!",
+        "specValue": "New",
+        "specDetail": "Mystic Hoard Giveaway Announcement!"
+      }
+    },
+    {
+      "id": "zY7-0k1cGY8",
+      "url": "https://www.youtube.com/watch?v=zY7-0k1cGY8",
+      "thumb": "https://i.ytimg.com/vi/zY7-0k1cGY8/hqdefault.jpg",
+      "when": "Nov 26",
+      "kind": "pack",
+      "view": {
+        "kicker": "Packs",
+        "heading": "Genesis Unlimited",
+        "subhead": "#96",
+        "detail": "Opening on camera.",
+        "line": "#96",
+        "specValue": "#96",
+        "specDetail": "Genesis Unlimited opening"
+      }
+    },
+    {
       "id": "1AGIgbFkKHo",
       "url": "https://www.youtube.com/watch?v=1AGIgbFkKHo",
       "thumb": "https://i.ytimg.com/vi/1AGIgbFkKHo/hqdefault.jpg",
@@ -205,38 +237,6 @@
         "detail": "Opening on camera.",
         "line": "#88",
         "specValue": "#88",
-        "specDetail": "Genesis Unlimited opening"
-      }
-    },
-    {
-      "id": "6f1CenDkNWA",
-      "url": "https://www.youtube.com/watch?v=6f1CenDkNWA",
-      "thumb": "https://i.ytimg.com/vi/6f1CenDkNWA/hqdefault.jpg",
-      "when": "Nov 17",
-      "kind": "diver",
-      "view": {
-        "kicker": "Deep Diver",
-        "heading": "Deep Diver",
-        "subhead": "Ep.5",
-        "detail": "How to get better at Neuroscape",
-        "line": "Ep.5 · How to get better at Neuroscape",
-        "specValue": "Ep. 05",
-        "specDetail": "How to get better at Neuroscape"
-      }
-    },
-    {
-      "id": "2gZbdH5DyS4",
-      "url": "https://www.youtube.com/watch?v=2gZbdH5DyS4",
-      "thumb": "https://i.ytimg.com/vi/2gZbdH5DyS4/hqdefault.jpg",
-      "when": "Nov 17",
-      "kind": "pack",
-      "view": {
-        "kicker": "Packs",
-        "heading": "Genesis Unlimited",
-        "subhead": "#87",
-        "detail": "Opening on camera.",
-        "line": "#87",
-        "specValue": "#87",
         "specDetail": "Genesis Unlimited opening"
       }
     }
@@ -701,6 +701,22 @@
   ],
   "pack": [
     {
+      "id": "zY7-0k1cGY8",
+      "url": "https://www.youtube.com/watch?v=zY7-0k1cGY8",
+      "thumb": "https://i.ytimg.com/vi/zY7-0k1cGY8/hqdefault.jpg",
+      "when": "Nov 26",
+      "kind": "pack",
+      "view": {
+        "kicker": "Packs",
+        "heading": "Genesis Unlimited",
+        "subhead": "#96",
+        "detail": "Opening on camera.",
+        "line": "#96",
+        "specValue": "#96",
+        "specDetail": "Genesis Unlimited opening"
+      }
+    },
+    {
       "id": "LdkJK8kVjsQ",
       "url": "https://www.youtube.com/watch?v=LdkJK8kVjsQ",
       "thumb": "https://i.ytimg.com/vi/LdkJK8kVjsQ/hqdefault.jpg",
@@ -921,22 +937,6 @@
         "detail": "Opening on camera.",
         "line": "#82",
         "specValue": "#82",
-        "specDetail": "Genesis Unlimited opening"
-      }
-    },
-    {
-      "id": "IHYHqZcNTDo",
-      "url": "https://www.youtube.com/watch?v=IHYHqZcNTDo",
-      "thumb": "https://i.ytimg.com/vi/IHYHqZcNTDo/hqdefault.jpg",
-      "when": "Nov 11",
-      "kind": "pack",
-      "view": {
-        "kicker": "Packs",
-        "heading": "Genesis Unlimited",
-        "subhead": "#81",
-        "detail": "Opening on camera.",
-        "line": "#81",
-        "specValue": "#81",
         "specDetail": "Genesis Unlimited opening"
       }
     }
